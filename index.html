@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ابرة التخدير فوق الجافية لتسكين آلام الولادة | Epidural Analgesia for Labour Pain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #c6d8e8;
+            --accent: #ff9a8d;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --success: #66bb6a;
+            --warning: #ffa726;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        body[dir="rtl"] {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body[dir="ltr"] {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        body[dir="rtl"] .language-toggle {
+            left: auto;
+            right: 20px;
+        }
+
+        .lang-btn {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #6a8bc5 100%);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            border-bottom: 8px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        body[dir="ltr"] h1 {
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease;
+            border-left: 6px solid var(--primary);
+        }
+
+        body[dir="rtl"] .section {
+            border-left: none;
+            border-right: 6px solid var(--primary);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        body[dir="rtl"] .section-title {
+            flex-direction: row-reverse;
+        }
+
+        .section-title i {
+            margin-right: 15px;
+            background-color: var(--secondary);
+            padding: 10px;
+            border-radius: 50%;
+            color: var(--primary);
+        }
+
+        body[dir="rtl"] .section-title i {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+
+        .subsection {
+            margin-bottom: 1.8rem;
+        }
+
+        .subsection-title {
+            color: var(--dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        body[dir="rtl"] .subsection-title {
+            flex-direction: row-reverse;
+        }
+
+        .subsection-title i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        body[dir="rtl"] .subsection-title i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+        }
+
+        body[dir="rtl"] ul, body[dir="rtl"] ol {
+            margin-right: 1.5rem;
+        }
+
+        body[dir="ltr"] ul, body[dir="ltr"] ol {
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.7rem;
+            padding-left: 0.5rem;
+        }
+
+        body[dir="rtl"] li {
+            padding-left: 0;
+            padding-right: 0.5rem;
+        }
+
+        .highlight {
+            background-color: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        body[dir="rtl"] .highlight {
+            border-left: none;
+            border-right: 4px solid var(--primary);
+        }
+
+        .myth-buster {
+            background-color: #fff9e6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--warning);
+        }
+
+        body[dir="rtl"] .myth-buster {
+            border-left: none;
+            border-right: 4px solid var(--warning);
+        }
+
+        .myth-buster .subsection-title {
+            color: #e67e22;
+        }
+
+        .icon-list {
+            list-style-type: none;
+        }
+
+        body[dir="rtl"] .icon-list, body[dir="ltr"] .icon-list {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .icon-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        body[dir="rtl"] .icon-list li {
+            flex-direction: row-reverse;
+        }
+
+        .icon-list i {
+            margin-right: 15px;
+            margin-top: 5px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        body[dir="rtl"] .icon-list i {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+
+        .warning {
+            background-color: #ffebee;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #f44336;
+        }
+
+        body[dir="rtl"] .warning {
+            border-left: none;
+            border-right: 4px solid #f44336;
+        }
+
+        .warning .subsection-title {
+            color: #c62828;
+        }
+
+        .info-box {
+            background-color: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--success);
+        }
+
+        body[dir="rtl"] .info-box {
+            border-left: none;
+            border-right: 4px solid var(--success);
+        }
+
+        .info-box .subsection-title {
+            color: #2e7d32;
+        }
+
+        /* Visual elements */
+        .procedure-visual {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        body[dir="rtl"] .procedure-visual {
+            flex-direction: row-reverse;
+        }
+
+        .position-demo {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .position-demo i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-note {
+            font-style: italic;
+            margin-top: 1.5rem;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .procedure-visual {
+                flex-direction: column;
+            }
+            
+            body[dir="rtl"] .procedure-visual {
+                flex-direction: column;
+            }
+            
+            .position-demo {
+                width: 100%;
+                margin: 1rem 0;
+            }
+            
+            .language-toggle {
+                top: 10px;
+                left: 10px;
+            }
+            
+            body[dir="rtl"] .language-toggle {
+                right: 10px;
+            }
+            
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .language-toggle {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            footer {
+                background-color: white;
+                color: black;
+                border-top: 1px solid #ddd;
+            }
+            
+            .language-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="arabic-btn" class="lang-btn active">
+            <i class="fas fa-language"></i> العربية
+        </button>
+        <button id="english-btn" class="lang-btn">
+            <i class="fas fa-language"></i> English
+        </button>
+    </div>
+
+  
+    <!-- Arabic Content -->
+    <div id="arabic-content" class="lang-content active">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <h1><i class="fas fa-baby"></i> ابرة التخدير فوق الجافية لتسكين آلام الولادة</h1>
+                    <p class="tagline">دليل لفهم التخدير فوق الجافية خلال الولادة - آمن، فعال، ومطمئن</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- مقدمة -->
+            <section class="section" id="introduction">
+                <h2 class="section-title"><i class="fas fa-heartbeat"></i> مقدمة عن التخدير فوق الجافية</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-clock"></i> كيف يعمل التخدير فوق الجافية</h3>
+                    <p>التخدير فوق الجافية هو طريقة آمنة وفعالة للتحكم في آلام المخاض. بمجرد إعطائه، يستغرق عادةً <strong>من 10 إلى 20 دقيقة</strong> لبدء مفعوله. يحدث تسكين الآلام تدريجيًا، مما يسمح لك بالبقاء مرتاحة وواعية خلال تجربة الولادة.</p>
+                    
+                    <div class="highlight">
+                        <p><strong>يمكن أن يساعد التخدير فوق الجافية عن طريق:</strong></p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-arrow-down"></i> <strong>تقليل شدة</strong> آلام الانقباضات</li>
+                            <li><i class="fas fa-hourglass-half"></i> <strong>تقليل مدة</strong> الألم خلال الانقباضات</li>
+                            <li><i class="fas fa-expand-arrows-alt"></i> <strong>إطالة الوقت بين الانقباضات</strong>، مما يمنحك مزيدًا من الراحة</li>
+                            <li><i class="fas fa-check-circle"></i> غالبًا مزيج من كل هذه الفوائد معًا</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-bullseye"></i> ما يمكن توقعه</h3>
+                    <p>الدور الأساسي للتخدير فوق الجافية هو <strong>تقليل آلام المخاض إلى مستوى يمكن تحمله أو إزالتها تمامًا</strong>. تبدأ آلام المخاض عادة في أسفل الظهر وتشع إلى أسفل البطن. مع التخدير فوق الجافية، يتم تقليل هذا الانزعاج بشكل كبير، مما يسمح لك بالتركيز على ولادة طفلك.</p>
+                    <p>ستبقى مستيقظة ومتنبهة، قادرة على المشاركة في الولادة مع الشعور بالراحة. الهدف هو جعل تجربة الولادة إيجابية قدر الإمكان.</p>
+                </div>
+            </section>
+
+            <!-- موانع الاستعمال -->
+            <section class="section" id="contraindications">
+                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> موانع استعمال التخدير فوق الجافية</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-ban"></i> موانع الاستعمال المطلقة</h3>
+                    <p>في حالات معينة، لا يمكن إعطاء التخدير فوق الجافية لأسباب تتعلق بالسلامة:</p>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-times-circle"></i> <strong>رفض المريضة</strong> - موافقتك مطلوبة دائمًا</li>
+                        <li><i class="fas fa-syringe"></i> <strong>إعطاء مميعات الدم</strong> مؤخرًا (LMWH) - خلال آخر 12-24 ساعة حسب الجرعة</li>
+                        <li><i class="fas fa-tint"></i> <strong>اضطرابات النزيف الشديدة</strong> أو اضطرابات تخثر الدم</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>انخفاض عدد الصفائح الدموية</strong> (الصفائح الدموية &lt; 50,000)</li>
+                        <li><i class="fas fa-bacteria"></i> <strong>عدوى في موقع الإدخال</strong> في ظهرك</li>
+                        <li><i class="fas fa-heartbeat"></i> <strong>انخفاض حجم الدم</strong> أو عدم استقرار الدورة الدموية</li>
+                        <li><i class="fas fa-brain"></i> <strong>زيادة الضغط داخل الجمجمة</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="warning">
+                    <h3 class="subsection-title"><i class="fas fa-exclamation-circle"></i> موانع الاستعمال النسبية</h3>
+                    <p>في هذه الحالات، قد يكون التخدير فوق الجافية ممكنًا لكنه يتطلب استشارة طبيب التخدير المتخصص:</p>
+                    <ul>
+                        <li>عدوى جهازية أو حمى</li>
+                        <li>اضطرابات نزيف خفيفة</li>
+                        <li>جراحة سابقة في العمود الفقري أو تشوهات في العمود الفقري</li>
+                        <li>حالات عصبية موجودة مسبقًا (مركزية أو طرفية)</li>
+                    </ul>
+                    <p>سيقيم طبيب التخدير حالتك الفردية بعناية ويناقش معك أفضل الخيارات.</p>
+                </div>
+            </section>
+
+            <!-- الإجراء -->
+            <section class="section" id="procedure">
+                <h2 class="section-title"><i class="fas fa-procedures"></i> إجراء التخدير فوق الجافية</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-couch"></i> الوصول إلى وضعية مريحة</h3>
+                    <p>سنقوم بمساعدتك للاستقرار في وضعية ملفوفة مريحة. يمكنك إما:</p>
+                    
+                    <div class="procedure-visual">
+                        <div class="position-demo">
+                            <i class="fas fa-chair"></i>
+                            <h4>وضعية الجلوس</h4>
+                            <p>الجلوس على حافة السرير مع استرخاء الكتفين، الذقن على الصدر</p>
+                        </div>
+                        
+                        <div class="position-demo">
+                            <i class="fas fa-bed"></i>
+                            <h4>وضعية الاستلقاء الجانبي</h4>
+                            <p>الاستلقاء على جانبك مع ثني الوركين نحو البطن، الذقن على الصدر</p>
+                        </div>
+                    </div>
+                    
+                    <p>كلا الوضعيتين تساعدان في فتح المسافات بين فقراتك لوضع الإبرة بأمان.</p>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-hand-holding-medical"></i> خلال الإجراء</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-spray-can"></i> <strong>التنظيف:</strong> ستشعرين بمطهر بارد على ظهرك لضمان التعقيم</li>
+                        <li><i class="fas fa-shield-alt"></i> <strong>التغطية:</strong> سيتم وضع غطاء معقم على ظهرك</li>
+                        <li><i class="fas fa-syringe"></i> <strong>المخدر الموضعي:</strong> وخز صغير لتخدير المنطقة (قد تشعرين بضغط ولكن بألم بسيط)</li>
+                        <li><i class="fas fa-cat"></i> <strong>وضع القسطرة:</strong> يتم إدخال أنبوب رفيع (قد تشعرين بإحساس كهربائي خفيف أو وخز)</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <h4 class="subsection-title"><i class="fas fa-volume-up"></i> تعليمات مهمة خلال الإجراء</h4>
+                        <p><strong>يرجى البقاء ساكنة وعدم الحركة.</strong> إذا شعرت بأي شيء أو حدث لديك انقباض، أبلغ طبيب التخدير فورًا. سيوقف الإجراء حتى تشعري بالراحة. لا توجد مفاجآت - سيشرح لك طبيب التخدير كل خطوة أثناء تقدمه.</p>
+                    </div>
+                </div>
+                
+                <div class="myth-buster">
+                    <h3 class="subsection-title"><i class="fas fa-comment-medical"></i> الخرافات الشائعة والتطمينات</h3>
+                    <p><strong>خرافة:</strong> التخدير فوق الجافية خطير ويمكن أن يسبب مشاكل دائمة في الظهر.</p>
+                    <p><strong>حقيقة:</strong> التخدير فوق الجافية آمن للغاية عند إعطائه من قبل محترفين مدربين. ألم مؤقت في موقع الحقن ممكن، لكن تلف الأعصاب الدائم نادر للغاية.</p>
+                    <p><strong>خرافة:</strong> لن تتمكني من الدفع بفعالية مع التخدير فوق الجافية.</p>
+                    <p><strong>حقيقة:</strong> مصمم التخدير فوق الجافية الحديث لتقليل الألم مع الحفاظ على قدرتك على الشعور بالضغط والدفع عند الحاجة.</p>
+                    <p>أنت في أيدٍ أمينة مع فريق التخدير ذوي الخبرة الذين يقومون بهذا الإجراء الروتيني بأمان كل يوم.</p>
+                </div>
+            </section>
+
+            <!-- تعليمات ما بعد الإدخال -->
+            <section class="section" id="post-insertion">
+                <h2 class="section-title"><i class="fas fa-list-check"></i> بعد التخدير فوق الجافية: تعليمات مهمة</h2>
+                
+                <div class="info-box">
+                    <p>اتباع هذه التعليمات سيساعد في ضمان عمل التخدير فوق الجافية بفعالية وأمان طوال فترة المخاض والولادة.</p>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-bed"></i> النشاط والوضعية</h3>
+                    <ol class="icon-list">
+                        <li><i class="fas fa-walking"></i> <strong>لا للمشي:</strong> ستبقين في السرير طالما أن قسطرة التخدير فوق الجافية في مكانها لأسباب تتعلق بالسلامة.</li>
+                        <li><i class="fas fa-compress-arrows-alt"></i> <strong>الوضعية المثالية:</strong> ابقي في منتصف السرير، وليس مستلقية على أي جانب. إذا لزم الأمر الاستلقاء الجانبي، ستوجهك الممرضات ويجب ألا تبقى على جانب واحد لأكثر من 20 دقيقة.</li>
+                        <li><i class="fas fa-exchange-alt"></i> <strong>تغيير الوضعية:</strong> اقلي من جانب إلى آخر كل 20 دقيقة حسب توجيهات الممرضة، ثم عودي إلى وضعية شبه الجلوس.</li>
+                    </ol>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-baby"></i> خلال الولادة</h3>
+                    <ol class="icon-list" start="4">
+                        <li><i class="fas fa-weight-hanging"></i> <strong>إحساس الضغط:</strong> في المرحلة المتأخرة من المخاض، ستشعرين بضغط (وليس ألم) في أسفل بطنك. هذا هو الطفل الذي يتحرك عبر حوضك. <strong>عندما تشعرين بهذا الضغط، فقد حان وقت الدفع.</strong> لا يمكن لأي تخدير فوق الجافية إزالة هذا الإحساس المهم.</li>
+                        <li><i class="fas fa-plus-circle"></i> <strong>فائدة إضافية:</strong> يقوم التخدير فوق الجافية أيضًا بتخدير منطقة العجان. يتحسن هذا التأثير مع الوقت ويكون أفضل في وضعية شبه الجلوس.</li>
+                        <li><i class="fas fa-running"></i> <strong>حركات الساقين:</strong> كل 20 دقيقة، اثني ركبتيك للحفاظ على الحركة. قد تشعر ساقاك بالخدر والثقل، لكن الحفاظ على الحركة يساعد في الدفع. إذا لم تستطيعي تحريك ساقيك، أبلغ الممرضة لضبط معدل التخدير فوق الجافية.</li>
+                    </ol>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-chart-line"></i> ما تظهره الأدلة</h3>
+                    <ol class="icon-list" start="7">
+                        <li><i class="fas fa-clock"></i> <strong>مدة الولادة:</strong> تظهر معظم الدراسات أن التخدير فوق الجافية لا يطيل المخاض بشكل كبير. تشير دراسات قليلة إلى إطالة محتملة تبلغ حوالي 15 دقيقة فقط.</li>
+                        <li><i class="fas fa-baby-carriage"></i> <strong>طريقة الولادة:</strong> لا يرتبط التخدير فوق الجافية بزيادة معدلات الولادة المساعدة (الملقط/الشفاط) أو الولادة القيصرية.</li>
+                    </ol>
+                </div>
+                
+                <div class="highlight">
+                    <h4 class="subsection-title"><i class="fas fa-question-circle"></i> الأسئلة والمخاوف</h4>
+                    <p>إذا كان لديك أي أسئلة أو مخاوف في أي وقت، يرجى إبلاغ ممرضتك. طبيب التخدير المناوب متاح للإجابة على أسئلتك وضمان حصولك على أفضل تجربة ممكنة.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p><i class="fas fa-hands-helping"></i> <strong>أنت في أيدٍ أمينة</strong></p>
+                    <p>فريق التخدير ذو الخبرة لدينا مكرس لضمان راحتك وسلامتك خلال المخاض والولادة.</p>
+                    <p class="footer-note">هذه المعلومات مخصصة لأغراض تعليمية. اتبعي دائمًا التعليمات المحددة التي يقدمها فريق الرعاية الصحية الخاص بك.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+    <!-- English Content -->
+    <div id="english-content" class="lang-content">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <h1><i class="fas fa-baby"></i> Epidural Analgesia for Labour Pain</h1>
+                    <p class="tagline">A guide to understanding epidural pain relief during childbirth – safe, effective, and reassuring.</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- Introduction Section -->
+            <section class="section" id="introduction-en">
+                <h2 class="section-title"><i class="fas fa-heartbeat"></i> Introduction to Epidural Analgesia</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-clock"></i> How Epidural Works</h3>
+                    <p>An epidural is a safe and effective method for managing labour pain. Once administered, it typically takes <strong>10 to 20 minutes</strong> to take effect. The pain relief happens gradually, allowing you to remain comfortable and aware during your childbirth experience.</p>
+                    
+                    <div class="highlight">
+                        <p><strong>Epidural can help by:</strong></p>
+                        <ul class="icon-list">
+                            <li><i class="fas fa-arrow-down"></i> <strong>Decreasing the intensity</strong> of contraction pain</li>
+                            <li><i class="fas fa-hourglass-half"></i> <strong>Reducing the duration</strong> of pain during contractions</li>
+                            <li><i class="fas fa-expand-arrows-alt"></i> <strong>Prolonging the time between contractions</strong>, giving you more rest</li>
+                            <li><i class="fas fa-check-circle"></i> Often a combination of all these benefits</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-bullseye"></i> What to Expect</h3>
+                    <p>The primary role of an epidural is to <strong>reduce labour pain to a manageable level or eliminate it entirely</strong>. Labour pain typically starts in the lower back and radiates to the lower abdomen. With an epidural, this discomfort is significantly decreased, allowing you to focus on the birth of your baby.</p>
+                    <p>You'll remain awake and alert, able to participate in the delivery while being comfortable. The goal is to make your childbirth experience as positive as possible.</p>
+                </div>
+            </section>
+
+            <!-- Contraindications Section -->
+            <section class="section" id="contraindications-en">
+                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> Contraindications for Epidural</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-ban"></i> Absolute Contraindications</h3>
+                    <p>In certain situations, an epidural cannot be administered for safety reasons:</p>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-times-circle"></i> <strong>Patient refusal</strong> - Your consent is always required</li>
+                        <li><i class="fas fa-syringe"></i> Recent <strong>administration of blood thinners</strong> (LMWH) - within last 12-24 hours depending on dose</li>
+                        <li><i class="fas fa-tint"></i> <strong>Severe bleeding disorders</strong> or coagulopathy</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>Low platelet count</strong> (Platelets &lt; 50,000)</li>
+                        <li><i class="fas fa-bacteria"></i> <strong>Infection at the insertion site</strong> on your back</li>
+                        <li><i class="fas fa-heartbeat"></i> <strong>Low blood volume</strong> or cardiovascular instability</li>
+                        <li><i class="fas fa-brain"></i> <strong>Increased pressure in the brain</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="warning">
+                    <h3 class="subsection-title"><i class="fas fa-exclamation-circle"></i> Relative Contraindications</h3>
+                    <p>In these situations, epidural may still be possible but requires consultation with a specialist anaesthetist:</p>
+                    <ul>
+                        <li>Systemic infection or fever</li>
+                        <li>Mild bleeding disorders</li>
+                        <li>Previous spinal surgery or abnormalities of the spine</li>
+                        <li>Pre-existing neurological conditions (central or peripheral)</li>
+                    </ul>
+                    <p>Your anaesthetist will carefully evaluate your individual situation and discuss the best options with you.</p>
+                </div>
+            </section>
+
+            <!-- Procedure Section -->
+            <section class="section" id="procedure-en">
+                <h2 class="section-title"><i class="fas fa-procedures"></i> The Epidural Procedure</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-couch"></i> Getting Comfortable</h3>
+                    <p>We'll help you settle into a comfortable curled position. You can either:</p>
+                    
+                    <div class="procedure-visual">
+                        <div class="position-demo">
+                            <i class="fas fa-chair"></i>
+                            <h4>Sitting Position</h4>
+                            <p>Sitting on the edge of the bed with relaxed shoulders, chin on chest</p>
+                        </div>
+                        
+                        <div class="position-demo">
+                            <i class="fas fa-bed"></i>
+                            <h4>Side-Lying Position</h4>
+                            <p>Lying on your side with hips flexed toward abdomen, chin on chest</p>
+                        </div>
+                    </div>
+                    
+                    <p>Both positions help open the spaces between your vertebrae for safe needle placement.</p>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-hand-holding-medical"></i> During the Procedure</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-spray-can"></i> <strong>Cleaning:</strong> You'll feel a cold antiseptic on your back to ensure sterility</li>
+                        <li><i class="fas fa-shield-alt"></i> <strong>Draping:</strong> A sterile drape will be placed over your back</li>
+                        <li><i class="fas fa-syringe"></i> <strong>Local anesthetic:</strong> A small prick to numb the area (you might feel pressure but minimal pain)</li>
+                        <li><i class="fas fa-cat"></i> <strong>Catheter placement:</strong> A thin tube is inserted (you might feel a light electrical or prickly sensation)</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <h4 class="subsection-title"><i class="fas fa-volume-up"></i> Important Instructions During Procedure</h4>
+                        <p><strong>Please stay still and don't move.</strong> If you feel anything or have a contraction, inform your anaesthetist immediately. They will pause the procedure until you're comfortable. There are no surprises – your anaesthetist will explain each step as they go.</p>
+                    </div>
+                </div>
+                
+                <div class="myth-buster">
+                    <h3 class="subsection-title"><i class="fas fa-comment-medical"></i> Common Myths & Reassurance</h3>
+                    <p><strong>Myth:</strong> Epidurals are dangerous and can cause permanent back problems.</p>
+                    <p><strong>Fact:</strong> Epidurals are very safe when administered by trained professionals. Temporary soreness at the injection site is possible, but permanent nerve damage is extremely rare.</p>
+                    <p><strong>Myth:</strong> You won't be able to push effectively with an epidural.</p>
+                    <p><strong>Fact:</strong> Modern epidurals are designed to reduce pain while preserving your ability to feel pressure and push when needed.</p>
+                    <p>You're in good hands with our experienced anaesthesia team who perform this routine procedure safely every day.</p>
+                </div>
+            </section>
+
+            <!-- Post-Insertion Instructions -->
+            <section class="section" id="post-insertion-en">
+                <h2 class="section-title"><i class="fas fa-list-check"></i> After Your Epidural: Important Instructions</h2>
+                
+                <div class="info-box">
+                    <p>Following these instructions will help ensure your epidural works effectively and safely throughout your labour and delivery.</p>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-bed"></i> Activity & Positioning</h3>
+                    <ol class="icon-list">
+                        <li><i class="fas fa-walking"></i> <strong>No walking:</strong> You will stay in bed as long as the epidural catheter is in place for safety.</li>
+                        <li><i class="fas fa-compress-arrows-alt"></i> <strong>Optimal position:</strong> Remain in the middle of the bed, not lying on either side. If side-lying is needed, nurses will instruct you and you should not stay on one side longer than 20 minutes.</li>
+                        <li><i class="fas fa-exchange-alt"></i> <strong>Position changes:</strong> Turn from side to side every 20 minutes as instructed by your nurse, then return to a semi-sitting position.</li>
+                    </ol>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-baby"></i> During Delivery</h3>
+                    <ol class="icon-list" start="4">
+                        <li><i class="fas fa-weight-hanging"></i> <strong>Pressure sensation:</strong> In late stage labour, you'll feel pressure (not pain) in your lower abdomen. This is the baby moving through your pelvis. <strong>When you feel this pressure, it's time to push.</strong> No epidural can eliminate this important sensation.</li>
+                        <li><i class="fas fa-plus-circle"></i> <strong>Additional benefit:</strong> The epidural also numbs the perineal area. This effect improves with time and is best in a semi-sitting position.</li>
+                        <li><i class="fas fa-running"></i> <strong>Leg movements:</strong> Every 20 minutes, flex your knees to maintain movement. Your legs may feel numb and heavy, but maintaining movement helps with pushing. If you cannot move your legs, inform your nurse to adjust the epidural rate.</li>
+                    </ol>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-chart-line"></i> What the Evidence Shows</h3>
+                    <ol class="icon-list" start="7">
+                        <li><i class="fas fa-clock"></i> <strong>Delivery duration:</strong> Most studies show epidurals do not significantly prolong labour. A few suggest a possible extension of about 15 minutes only.</li>
+                        <li><i class="fas fa-baby-carriage"></i> <strong>Delivery method:</strong> Epidurals are not associated with increased rates of assisted delivery (forceps/vacuum) or cesarean section.</li>
+                    </ol>
+                </div>
+                
+                <div class="highlight">
+                    <h4 class="subsection-title"><i class="fas fa-question-circle"></i> Questions & Concerns</h4>
+                    <p>If you have any questions or concerns at any time, please inform your nurse. The anaesthetist on call is available to answer your questions and ensure you have the best possible experience.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p><i class="fas fa-hands-helping"></i> <strong>You're in Safe Hands</strong></p>
+                    <p>Our experienced anaesthesia team is dedicated to ensuring your comfort and safety throughout your labour and delivery.</p>
+                    <p class="footer-note">This information is intended for educational purposes. Always follow the specific instructions provided by your healthcare team.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language switching functionality
+            const arabicBtn = document.getElementById('arabic-btn');
+            const englishBtn = document.getElementById('english-btn');
+            const arabicContent = document.getElementById('arabic-content');
+            const englishContent = document.getElementById('english-content');
+            const body = document.body;
+            
+            // Set Arabic as default
+            arabicBtn.classList.add('active');
+            arabicContent.classList.add('active');
+            body.setAttribute('dir', 'rtl');
+            
+            // Arabic button click
+            arabicBtn.addEventListener('click', function() {
+                arabicBtn.classList.add('active');
+                englishBtn.classList.remove('active');
+                arabicContent.classList.add('active');
+                englishContent.classList.remove('active');
+                body.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+                
+                // Update page title for Arabic
+                document.title = "ابرة التخدير فوق الجافية لتسكين آلام الولادة | Epidural Analgesia for Labour Pain";
+            });
+            
+            // English button click
+            englishBtn.addEventListener('click', function() {
+                englishBtn.classList.add('active');
+                arabicBtn.classList.remove('active');
+                englishContent.classList.add('active');
+                arabicContent.classList.remove('active');
+                body.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', 'en');
+                
+                // Update page title for English
+                document.title = "Epidural Analgesia for Labour Pain | ابرة التخدير فوق الجافية لتسكين آلام الولادة";
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    // Get the current active language content
+                    const activeContent = document.querySelector('.lang-content.active');
+                    const targetElement = activeContent.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> طباعة هذه المعلومات | Print This Information';
+            printButton.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: var(--primary);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                padding: 12px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            `;
+            
+            body.setAttribute('dir', 'rtl') ? printButton.style.right = '20px' : printButton.style.left = '20px';
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            body.appendChild(printButton);
+            
+            // Update print button position when language changes
+            const updatePrintButtonPosition = () => {
+                if(body.getAttribute('dir') === 'rtl') {
+                    printButton.style.right = '20px';
+                    printButton.style.left = 'auto';
+                } else {
+                    printButton.style.left = '20px';
+                    printButton.style.right = 'auto';
+                }
+            };
+            
+            // Add event listeners for language change to update button position
+            arabicBtn.addEventListener('click', updatePrintButtonPosition);
+            englishBtn.addEventListener('click', updatePrintButtonPosition);
+            
+            // Store language preference in localStorage
+            const saveLanguagePreference = (language) => {
+                localStorage.setItem('epidural-language-preference', language);
+            };
+            
+            const loadLanguagePreference = () => {
+                const savedLanguage = localStorage.getItem('epidural-language-preference');
+                if (savedLanguage === 'english') {
+                    englishBtn.click();
+                }
+            };
+            
+            // Load saved language preference
+            loadLanguagePreference();
+            
+            // Save preference when language is changed
+            arabicBtn.addEventListener('click', () => saveLanguagePreference('arabic'));
+            englishBtn.addEventListener('click', () => saveLanguagePreference('english'));
+        });
+    </script>
+</body>
+</html>
