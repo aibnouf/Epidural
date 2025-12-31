@@ -30,6 +30,17 @@
     <script>
         // Load Arabic content by default
         document.addEventListener('DOMContentLoaded', function() {
+            // Apply theme colors immediately
+            const root = document.documentElement;
+            root.style.setProperty('--primary', '#4a6fa5');
+            root.style.setProperty('--secondary', '#c6d8e8');
+            root.style.setProperty('--accent', '#ff9a8d');
+            root.style.setProperty('--light', '#f8f9fa');
+            root.style.setProperty('--dark', '#2c3e50');
+            root.style.setProperty('--success', '#66bb6a');
+            root.style.setProperty('--warning', '#ffa726');
+            root.style.setProperty('--danger', '#ef5350');
+            
             loadContent('ar');
         });
     </script>
