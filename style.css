@@ -10,10 +10,10 @@
 body { margin: 0; padding-top: 150px; background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
 body[dir="rtl"] { font-family: 'Cairo', sans-serif; }
 
-header { position: fixed; top: 0; left: 0; right: 0; background: white; padding: 2rem 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); transition: var(--transition); }
-header.scrolled { padding: 0.8rem 0; }
+header { position: fixed; top: 0; left: 0; right: 0; background: white; padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); transition: var(--transition); }
+header.scrolled { padding: 0.5rem 0; }
 header.scrolled .tagline { display: none; }
-header.scrolled h1 { font-size: 1.4rem; }
+header.scrolled h1 { font-size: 1.0rem; }
 
 .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 .header-content { text-align: center; }
