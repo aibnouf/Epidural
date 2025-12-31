@@ -1,57 +1,62 @@
 // Global variables
 let currentLanguage = 'ar';
 
-// Language switching functionality
+// DOM elements
 const floatingArabicBtn = document.getElementById('floating-arabic-btn');
 const floatingEnglishBtn = document.getElementById('floating-english-btn');
 const body = document.body;
 
-// Set up language switching
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    setupLanguageSwitching();
+});
+
+// Language switching functionality
 function setupLanguageSwitching() {
     // Load saved language preference
     loadLanguagePreference();
     
-    // Arabic button click
-    floatingArabicBtn.addEventListener('click', function() {
-        switchToArabic();
-    });
+    // Set up button event listeners
+    if (floatingArabicBtn) {
+        floatingArabicBtn.addEventListener('click', switchToArabic);
+    }
     
-    // English button click
-    floatingEnglishBtn.addEventListener('click', function() {
-        switchToEnglish();
-    });
+    if (floatingEnglishBtn) {
+        floatingEnglishBtn.addEventListener('click', switchToEnglish);
+    }
 }
 
 // Switch to Arabic
 function switchToArabic() {
     currentLanguage = 'ar';
-    floatingArabicBtn.style.display = 'none';
-    floatingEnglishBtn.style.display = 'flex';
-    body.setAttribute('dir', 'rtl');
-    document.documentElement.setAttribute('lang', 'ar');
-    document.title = "إبرة الظهر (إبرة التخدير فوق الجافية) لتسكين آلام الولادة | Epidural Analgesia for Labour Pain";
-    
-    // Load Arabic content
+    updateLanguageUI('ar');
     loadContent('ar');
-    
-    // Save preference
     saveLanguagePreference('arabic');
 }
 
 // Switch to English
 function switchToEnglish() {
     currentLanguage = 'en';
-    floatingEnglishBtn.style.display = 'none';
-    floatingArabicBtn.style.display = 'flex';
-    body.setAttribute('dir', 'ltr');
-    document.documentElement.setAttribute('lang', 'en');
-    document.title = "Epidural Analgesia for Labour Pain | إبرة الظهر (إبرة التخدير فوق الجافية) لتسكين آلام الولادة";
-    
-    // Load English content
+    updateLanguageUI('en');
     loadContent('en');
-    
-    // Save preference
     saveLanguagePreference('english');
+}
+
+// Update UI for language switch
+function updateLanguageUI(language) {
+    if (language === 'ar') {
+        floatingArabicBtn.style.display = 'none';
+        floatingEnglishBtn.style.display = 'flex';
+        body.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('lang', 'ar');
+        document.title = "إبرة الظهر (إبرة التخدير فوق الجافية) لتسكين آلام الولادة | Epidural Analgesia for Labour Pain";
+    } else {
+        floatingEnglishBtn.style.display = 'none';
+        floatingArabicBtn.style.display = 'flex';
+        body.setAttribute('dir', 'ltr');
+        document.documentElement.setAttribute('lang', 'en');
+        document.title = "Epidural Analgesia for Labour Pain | إبرة الظهر (إبرة التخدير فوق الجافية) لتسكين آلام الولادة";
+    }
 }
 
 // Load content from HTML file
@@ -61,26 +66,18 @@ function loadContent(language) {
     
     fetch(contentFile)
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+            if (!response.ok) throw new Error('Network response was not ok');
             return response.text();
         })
         .then(html => {
             container.innerHTML = html;
             
-            // Re-initialize everything after content is loaded
+            // Initialize all interactive elements
             setTimeout(() => {
-                // Initialize contraindications navigation
                 initializeContraTabs();
                 initializeAllCardNavigations();
                 setupCheckOptions();
-                
-                // Set up smooth scrolling
                 setupSmoothScrolling();
-                
-                // Ensure card counters are correct
-                updateCardCounters();
             }, 100);
         })
         .catch(error => {
@@ -102,33 +99,35 @@ function loadLanguagePreference() {
     const savedLanguage = localStorage.getItem('epidural-language-preference');
     if (savedLanguage === 'english') {
         switchToEnglish();
-    } else {
-        // Arabic is default
-        floatingArabicBtn.style.display = 'none';
-        floatingEnglishBtn.style.display = 'flex';
     }
 }
 
-// Initialize all contraindications tabs
+// Initialize contraindications tabs
 function initializeContraTabs() {
     const tabs = document.querySelectorAll('.contra-tab');
     
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
-            const tabId = this.getAttribute('data-tab');
+            const tabType = this.getAttribute('data-tab');
             
             // Update active tab
             tabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
             
-            // Show corresponding cards container
+            // Show corresponding cards
             const cardsContainers = document.querySelectorAll('.contra-cards');
             cardsContainers.forEach(container => {
                 container.classList.remove('active');
                 
-                // Check if this container matches the tab
-                if ((currentLanguage === 'ar' && container.id === tabId + '-cards') ||
-                    (currentLanguage === 'en' && container.id === tabId + '-cards-en')) {
+                // Determine the correct container ID based on language
+                let targetId;
+                if (currentLanguage === 'ar') {
+                    targetId = tabType === 'absolute' ? 'absolute-cards' : 'relative-cards';
+                } else {
+                    targetId = tabType === 'absolute-en' ? 'absolute-cards-en' : 'relative-cards-en';
+                }
+                
+                if (container.id === targetId) {
                     container.classList.add('active');
                     resetCards(container);
                 }
@@ -137,10 +136,18 @@ function initializeContraTabs() {
     });
 }
 
+// Initialize all card navigation systems
+function initializeAllCardNavigations() {
+    const containers = document.querySelectorAll('.contra-cards');
+    containers.forEach(container => {
+        if (container.classList.contains('active')) {
+            initializeCardNavigation(container);
+        }
+    });
+}
+
 // Initialize card navigation for a specific container
 function initializeCardNavigation(container) {
-    if (!container) return;
-    
     const cards = container.querySelectorAll('.contra-card');
     const prevBtn = container.querySelector('.prev-btn');
     const nextBtn = container.querySelector('.next-btn');
@@ -168,14 +175,9 @@ function initializeCardNavigation(container) {
     if (nextBtn) {
         nextBtn.addEventListener('click', function() {
             if (currentCardIndex < totalCards - 1) {
-                // Hide current card
                 cards[currentCardIndex].style.display = 'none';
                 currentCardIndex++;
-                
-                // Show next card
                 cards[currentCardIndex].style.display = 'block';
-                
-                // Update navigation
                 updateNavigation();
                 updateDots(dots, currentCardIndex);
             }
@@ -186,14 +188,9 @@ function initializeCardNavigation(container) {
     if (prevBtn) {
         prevBtn.addEventListener('click', function() {
             if (currentCardIndex > 0) {
-                // Hide current card
                 cards[currentCardIndex].style.display = 'none';
                 currentCardIndex--;
-                
-                // Show previous card
                 cards[currentCardIndex].style.display = 'block';
-                
-                // Update navigation
                 updateNavigation();
                 updateDots(dots, currentCardIndex);
             }
@@ -203,14 +200,9 @@ function initializeCardNavigation(container) {
     // Dot click functionality
     dots.forEach((dot, index) => {
         dot.addEventListener('click', function() {
-            // Hide current card
             cards[currentCardIndex].style.display = 'none';
             currentCardIndex = index;
-            
-            // Show selected card
             cards[currentCardIndex].style.display = 'block';
-            
-            // Update navigation
             updateNavigation();
             updateDots(dots, currentCardIndex);
         });
@@ -222,7 +214,6 @@ function initializeCardNavigation(container) {
             currentCardSpan.textContent = currentCardIndex + 1;
         }
         
-        // Update button states
         if (prevBtn) {
             prevBtn.disabled = currentCardIndex === 0;
         }
@@ -243,15 +234,7 @@ function initializeCardNavigation(container) {
     updateNavigation();
 }
 
-// Initialize all card navigations
-function initializeAllCardNavigations() {
-    const containers = document.querySelectorAll('.contra-cards');
-    containers.forEach(container => {
-        initializeCardNavigation(container);
-    });
-}
-
-// Reset cards to first card
+// Reset cards to first position
 function resetCards(container) {
     const cards = container.querySelectorAll('.contra-card');
     const prevBtn = container.querySelector('.prev-btn');
@@ -267,7 +250,7 @@ function resetCards(container) {
     // Reset to first card
     const currentCardIndex = 0;
     if (currentCardSpan) {
-        currentCardSpan.textContent = currentCardIndex + 1;
+        currentCardSpan.textContent = 1;
     }
     
     // Reset dots
@@ -282,53 +265,42 @@ function resetCards(container) {
     if (nextBtn) {
         nextBtn.disabled = cards.length <= 1;
     }
+    
+    // Reset check options
+    container.querySelectorAll('.check-option').forEach(option => {
+        option.classList.remove('selected-yes', 'selected-no');
+    });
 }
 
 // Set up check option selections
 function setupCheckOptions() {
     document.querySelectorAll('.check-option').forEach(option => {
         option.addEventListener('click', function() {
-            const parentOptions = this.parentElement;
-            const allOptions = parentOptions.querySelectorAll('.check-option');
+            const parent = this.parentElement;
+            const allOptions = parent.querySelectorAll('.check-option');
             
-            // Remove selected class from all options
+            // Remove selected classes
             allOptions.forEach(opt => {
                 opt.classList.remove('selected-yes', 'selected-no');
             });
             
-            // Add selected class to clicked option
+            // Add appropriate class
             const value = this.getAttribute('data-value');
-            if (value === 'yes') {
-                this.classList.add('selected-yes');
-            } else {
-                this.classList.add('selected-no');
-            }
+            this.classList.add(value === 'yes' ? 'selected-yes' : 'selected-no');
         });
     });
 }
 
-// Update all card counters
-function updateCardCounters() {
-    document.querySelectorAll('.contra-cards').forEach(container => {
-        const cards = container.querySelectorAll('.contra-card');
-        const totalCardsSpan = container.querySelector('.total-cards');
-        
-        if (totalCardsSpan && cards.length > 0) {
-            totalCardsSpan.textContent = cards.length;
-        }
-    });
-}
-
-// Smooth scrolling for anchor links
+// Set up smooth scrolling
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
+            if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
-            if(targetElement) {
+            if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 20,
                     behavior: 'smooth'
@@ -337,8 +309,3 @@ function setupSmoothScrolling() {
         });
     });
 }
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    setupLanguageSwitching();
-});
