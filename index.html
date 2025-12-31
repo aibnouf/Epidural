@@ -19,158 +19,67 @@
         </div>
     </header>
 
-    <div id="content-ar" class="lang-content active">
+    <div id="content-ar" class="lang-content">
         <main class="container">
             <section class="section">
                 <h2 class="section-title"><i class="fas fa-heartbeat"></i> مقدمة</h2>
-                <div class="subsection">
-                    <p>إبرة الظهر هي طريقة آمنة وفعالة للتحكم في آلام المخاض. يبدأ مفعولها عادةً خلال <strong>10 إلى 20 دقيقة</strong>.</p>
-                    <div class="highlight">
-                        <ul class="icon-list">
-                            <li><i class="fas fa-arrow-down"></i> <strong>تقليل الشدة:</strong> تخفيف حدة آلام الانقباضات بشكل ملحوظ.</li>
-                            <li><i class="fas fa-hourglass-half"></i> <strong>تقليل المدة:</strong> تقليص الفترة الزمنية للشعور بالألم.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>الراحة:</strong> تمنحك فرصة للراحة والاستعداد لمرحلة الولادة.</li>
-                        </ul>
-                    </div>
+                <p>إبرة الظهر هي وسيلة فعالة لتخفيف آلام الولادة (التي تبدأ من أسفل الظهر إلى أسفل البطن) لدرجة تجعل الألم محتملاً جداً أو يختفي تماماً.</p>
+                <div class="highlight">
+                    <ul class="icon-list">
+                        <li><i class="fas fa-clock"></i> تحتاج من 10 إلى 20 دقيقة ليبدأ مفعولها.</li>
+                        <li><i class="fas fa-compress-arrows-alt"></i> تقلل من شدة الألم أو مدة الشعور بالانقباضة.</li>
+                    </ul>
                 </div>
             </section>
 
-            <section class="section" id="contraindications-ar">
-                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> قائمة التحقق من الموانع</h2>
-                
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> موانع الاستعمال</h2>
                 <div class="contraindications-container">
                     <div class="contra-tabs">
-                        <button class="contra-tab active" data-target="abs-ar">موانع الاستعمال المطلقة</button>
-                        <button class="contra-tab" data-target="rel-ar">موانع الاستعمال النسبية</button>
+                        <button class="contra-tab active" data-target="abs-ar">موانع مطلقة</button>
+                        <button class="contra-tab" data-target="rel-ar">موانع نسبية</button>
                     </div>
-                    
-                    <div class="contra-cards-container">
-                        <div id="abs-ar" class="contra-cards active">
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-user-times"></i></div>
-                                    <h3>رفض المريضة</h3>
-                                </div>
-                                <p>لا يمكن إعطاء الإبرة دون موافقتك الكاملة والمستنيرة.</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">أرفض</div>
-                                    <div class="check-option" data-value="no">أوافق</div>
-                                </div>
-                            </div>
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-syringe"></i></div>
-                                    <h3>مميعات الدم</h3>
-                                </div>
-                                <p>هل تلقيتِ جرعة وقائية (LMWH) خلال الـ 12 ساعة الماضية، أو علاجية خلال 24 ساعة؟</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">نعم</div>
-                                    <div class="check-option" data-value="no">لا</div>
-                                </div>
-                            </div>
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-tint"></i></div>
-                                    <h3>انخفاض الصفائح</h3>
-                                </div>
-                                <p>هل عدد الصفائح الدموية أقل من 50,000؟</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">نعم</div>
-                                    <div class="check-option" data-value="no">لا</div>
-                                </div>
-                            </div>
-                            <div class="contra-navigation">
-                                <button class="nav-btn prev-btn"><i class="fas fa-arrow-right"></i> السابق</button>
-                                <span><span class="current-card">1</span> / <span class="total-cards">3</span></span>
-                                <button class="nav-btn next-btn">التالي <i class="fas fa-arrow-left"></i></button>
-                            </div>
+                    <div id="abs-ar" class="contra-cards active">
+                        <div class="contra-card"><h3>رفض المريضة</h3><p>لا يمكن إجراء التخدير بدون موافقتك.</p></div>
+                        <div class="contra-card"><h3>مميعات الدم</h3><p>جرعة وقائية خلال 12 ساعة أو علاجية خلال 24 ساعة.</p></div>
+                        <div class="contra-card"><h3>مشاكل التخثر</h3><p>نقص الصفائح (أقل من 50) أو اعتلال شديد في التخثر.</p></div>
+                        <div class="contra-card"><h3>أسباب طبية أخرى</h3><p>إنتان في موقع الحقن، عدم استقرار الدورة الدموية، أو ارتفاع ضغط الدماغ.</p></div>
+                        <div class="contra-navigation">
+                            <button class="nav-btn prev-btn">السابق</button>
+                            <span><span class="current-card">1</span> / <span class="total-cards">4</span></span>
+                            <button class="nav-btn next-btn">التالي</button>
                         </div>
-
-                        <div id="rel-ar" class="contra-cards">
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-procedures"></i></div>
-                                    <h3>جراحة سابقة</h3>
-                                </div>
-                                <p>هل خضعتِ لجراحة سابقة في العمود الفقري؟</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">نعم</div>
-                                    <div class="check-option" data-value="no">لا</div>
-                                </div>
-                            </div>
-                             <div class="contra-navigation">
-                                <button class="nav-btn prev-btn"><i class="fas fa-arrow-right"></i> السابق</button>
-                                <span><span class="current-card">1</span> / <span class="total-cards">1</span></span>
-                                <button class="nav-btn next-btn">التالي <i class="fas fa-arrow-left"></i></button>
-                            </div>
-                        </div>
+                    </div>
+                    <div id="rel-ar" class="contra-cards">
+                        <div class="contra-card"><h3>استشارة الطبيب</h3><p>تتضمن العدوى الجهازية، اعتلال التخثر الطفيف، أو عمليات سابقة في العمود الفقري.</p></div>
                     </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title"><i class="fas fa-procedures"></i> إجراء إبرة الظهر</h2>
-                
-                <div class="subsection">
-                    <h3 class="subsection-title"><i class="fas fa-couch"></i> الوضعية المناسبة</h3>
-                    <p>سنساعدك في اتخاذ وضعية "القرفصاء" أو الاستلقاء الجانبي لفتح المسافات بين الفقرات:</p>
-                    
-                    <div class="procedure-visual">
-                        <div class="position-demo">
-                            <i class="fas fa-chair"></i>
-                            <h4>وضعية الجلوس</h4>
-                            <p>الجلوس على حافة السرير، الكتفين مسترخيين، والذقن للأسفل.</p>
-                        </div>
-                        <div class="position-demo">
-                            <i class="fas fa-bed"></i>
-                            <h4>الاستلقاء الجانبي</h4>
-                            <p>النوم على الجانب مع ثني الركبتين نحو البطن والذقن للصدر.</p>
-                        </div>
-                    </div>
+                <h2 class="section-title"><i class="fas fa-user-md"></i> خطوات الإجراء</h2>
+                <p>سنساعدك على اتخاذ وضعية الانحناء (جلوساً أو جانبياً). سيتم تعقيم الظهر (ستشعرين ببرودة) ووضع غطاء معقم.</p>
+                <div class="procedure-visual">
+                    <div class="position-demo"><i class="fas fa-chair"></i><h4>وضعية الجلوس</h4></div>
+                    <div class="position-demo"><i class="fas fa-bed"></i><h4>الاستلقاء الجانبي</h4></div>
                 </div>
-                
-                <div class="subsection">
-                    <h3 class="subsection-title"><i class="fas fa-hand-holding-medical"></i> خطوات الإجراء</h3>
-                    <ul class="icon-list">
-                        <li><i class="fas fa-spray-can"></i> <strong>التعقيم:</strong> تنظيف الظهر بمطهر بارد.</li>
-                        <li><i class="fas fa-syringe"></i> <strong>التخدير الموضعي:</strong> وخز صغير لتخدير الجلد (ألم بسيط).</li>
-                        <li><i class="fas fa-user-md"></i> <strong>الإدخال:</strong> وضع أنبوب رفيع جداً (القسطرة) لتوصيل الدواء.</li>
-                    </ul>
-                    <div class="warning">
-                        <strong>مهم جداً:</strong> يرجى البقاء ثابتة تماماً خلال الإجراء. إذا شعرتِ بانقباضة، أخبري الطبيب فوراً ليتوقف لحظياً.
-                    </div>
-                </div>
-
-                <div class="myth-buster">
-                    <h3 class="subsection-title"><i class="fas fa-comment-medical"></i> خرافات وحقائق</h3>
-                    <p><strong>خرافة:</strong> تسبب الشلل أو آلام ظهر دائمة.<br>
-                    <strong>حقيقة:</strong> نادر جداً. قد تشعرين بألم بسيط مكان الحقنة لأيام قليلة فقط.</p>
-                </div>
+                <div class="warning">يرجى عدم التحرك تماماً. إذا شعرتِ بانقباضة، أخبري الطبيب ليتوقف مؤقتاً.</div>
             </section>
 
             <section class="section">
-                <h2 class="section-title"><i class="fas fa-list-check"></i> ما بعد الإجراء</h2>
-                
-                <div class="info-box">
-                   لضمان سلامتك وفعالية التخدير، يرجى اتباع التعليمات التالية بدقة.
-                </div>
-
-                <div class="subsection">
-                    <ul class="icon-list">
-                        <li><i class="fas fa-walking"></i> <strong>الحركة:</strong> يجب البقاء في السرير وعدم المشي طالما القسطرة موجودة.</li>
-                        <li><i class="fas fa-exchange-alt"></i> <strong>التقليب:</strong> غيري وضعيتك من جانب لآخر كل 20 دقيقة بمساعدة الممرضة.</li>
-                        <li><i class="fas fa-weight-hanging"></i> <strong>وقت الدفع:</strong> ستشعرين بضغط (وليس ألم) أسفل البطن؛ هذه علامة بدء مرحلة الدفع.</li>
-                        <li><i class="fas fa-running"></i> <strong>تحريك الساقين:</strong> حاولي ثني ركبتيك كل فترة للحفاظ على الدورة الدموية.</li>
-                    </ul>
-                </div>
+                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> تعليمات ما بعد الإدخال</h2>
+                <ul class="icon-list">
+                    <li><i class="fas fa-walking"></i> يمنع المشي تماماً طالما القسطرة موجودة.</li>
+                    <li><i class="fas fa-bed"></i> الوضع المثالي هو منتصف السرير. التغيير للجانبين يكون كل 20 دقيقة وبإشراف التمريض.</li>
+                    <li><i class="fas fa-info-circle"></i> ستشعرين بضغط في أسفل البطن عند مرحلة الدفع؛ هذا الضغط ضروري ولا تزيله الإبرة.</li>
+                    <li><i class="fas fa-running"></i> يجب تحريك القدمين وثني الركب كل 20 دقيقة لضمان قوة العضلات.</li>
+                </ul>
             </section>
         </main>
-
         <footer>
             <div class="container">
-                <p><i class="fas fa-hands-helping"></i> <strong>أنتِ في أيدٍ أمينة</strong></p>
-                <p>فريق التخدير موجود لضمان راحتك وسلامتك.</p>
-                <p class="footer-note">هذه المعلومات للأغراض التعليمية. اتبعي دائماً تعليمات فريقك الطبي.</p>
+                <p><strong>أنتِ في أيدٍ أمينة</strong></p>
+                <p>فريق التخدير متاح دائماً للإجابة على تساؤلاتك عبر الممرضة.</p>
             </div>
         </footer>
     </div>
@@ -179,165 +88,70 @@
         <main class="container">
             <section class="section">
                 <h2 class="section-title"><i class="fas fa-heartbeat"></i> Introduction</h2>
-                <div class="subsection">
-                    <p>An epidural is a safe and effective method for managing labour pain. Once administered, it typically takes <strong>10 to 20 minutes</strong> to take effect.</p>
-                    <div class="highlight">
-                        <ul class="icon-list">
-                            <li><i class="fas fa-arrow-down"></i> <strong>Intensity:</strong> Significantly decreases contraction pain.</li>
-                            <li><i class="fas fa-hourglass-half"></i> <strong>Duration:</strong> Reduces the duration of pain sensation.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Rest:</strong> Allows you to rest and recover before delivery.</li>
-                        </ul>
-                    </div>
+                <p>An epidural effectively manages labour pain (from lower back to abdomen) to a level where it is tolerable or disappears completely.</p>
+                <div class="highlight">
+                    <ul class="icon-list">
+                        <li><i class="fas fa-clock"></i> Takes 10-20 minutes to take effect.</li>
+                        <li><i class="fas fa-compress-arrows-alt"></i> Decreases pain intensity and duration of contractions.</li>
+                    </ul>
                 </div>
             </section>
 
-            <section class="section" id="contraindications-en">
-                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> Contraindications Checklist</h2>
-                
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> Contraindications</h2>
                 <div class="contraindications-container">
                     <div class="contra-tabs">
-                        <button class="contra-tab active" data-target="abs-en">Absolute Contraindications</button>
-                        <button class="contra-tab" data-target="rel-en">Relative Contraindications</button>
+                        <button class="contra-tab active" data-target="abs-en">Absolute</button>
+                        <button class="contra-tab" data-target="rel-en">Relative</button>
                     </div>
-                    
-                    <div class="contra-cards-container">
-                        <div id="abs-en" class="contra-cards active">
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-user-times"></i></div>
-                                    <h3>Patient Refusal</h3>
-                                </div>
-                                <p>It cannot be given without your full and informed consent.</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">I Refuse</div>
-                                    <div class="check-option" data-value="no">I Consent</div>
-                                </div>
-                            </div>
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-syringe"></i></div>
-                                    <h3>Blood Thinners</h3>
-                                </div>
-                                <p>Have you received blood thinners (LMWH) in the last 12 (prophylactic) or 24 (therapeutic) hours?</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">Yes</div>
-                                    <div class="check-option" data-value="no">No</div>
-                                </div>
-                            </div>
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-tint"></i></div>
-                                    <h3>Low Platelets</h3>
-                                </div>
-                                <p>Is your platelet count less than 50,000?</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">Yes</div>
-                                    <div class="check-option" data-value="no">No</div>
-                                </div>
-                            </div>
-                            <div class="contra-navigation">
-                                <button class="nav-btn prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
-                                <span><span class="current-card">1</span> / <span class="total-cards">3</span></span>
-                                <button class="nav-btn next-btn">Next <i class="fas fa-arrow-right"></i></button>
-                            </div>
+                    <div id="abs-en" class="contra-cards active">
+                        <div class="contra-card"><h3>Patient Refusal</h3><p>Consent is mandatory before the procedure.</p></div>
+                        <div class="contra-card"><h3>Blood Thinners</h3><p>Prophylactic dose < 12h or therapeutic < 24h.</p></div>
+                        <div class="contra-card"><h3>Coagulopathy</h3><p>Platelet count < 50 or severe bleeding disorders.</p></div>
+                        <div class="contra-card"><h3>Other Medical</h3><p>Site infection, CV instability, or raised ICP.</p></div>
+                        <div class="contra-navigation">
+                            <button class="nav-btn prev-btn">Previous</button>
+                            <span><span class="current-card">1</span> / <span class="total-cards">4</span></span>
+                            <button class="nav-btn next-btn">Next</button>
                         </div>
-
-                        <div id="rel-en" class="contra-cards">
-                            <div class="contra-card">
-                                <div class="contra-card-header">
-                                    <div class="contra-card-icon"><i class="fas fa-procedures"></i></div>
-                                    <h3>Spinal Surgery</h3>
-                                </div>
-                                <p>Have you had previous spinal surgery?</p>
-                                <div class="check-options">
-                                    <div class="check-option" data-value="yes">Yes</div>
-                                    <div class="check-option" data-value="no">No</div>
-                                </div>
-                            </div>
-                            <div class="contra-navigation">
-                                <button class="nav-btn prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
-                                <span><span class="current-card">1</span> / <span class="total-cards">1</span></span>
-                                <button class="nav-btn next-btn">Next <i class="fas fa-arrow-right"></i></button>
-                            </div>
-                        </div>
+                    </div>
+                    <div id="rel-en" class="contra-cards">
+                        <div class="contra-card"><h3>Consultant Review</h3><p>Includes systemic infection, previous spinal surgery, or neurological conditions.</p></div>
                     </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title"><i class="fas fa-procedures"></i> The Procedure</h2>
-                
-                <div class="subsection">
-                    <h3 class="subsection-title"><i class="fas fa-couch"></i> Getting Comfortable</h3>
-                    <p>We will help you settle into a comfortable curled position to open the spaces between your vertebrae.</p>
-                    
-                    <div class="procedure-visual">
-                        <div class="position-demo">
-                            <i class="fas fa-chair"></i>
-                            <h4>Sitting</h4>
-                            <p>Sitting on edge of bed, shoulders relaxed, chin down.</p>
-                        </div>
-                        <div class="position-demo">
-                            <i class="fas fa-bed"></i>
-                            <h4>Side-Lying</h4>
-                            <p>Lying on side, knees to chest, chin down.</p>
-                        </div>
-                    </div>
+                <h2 class="section-title"><i class="fas fa-user-md"></i> Procedure</h2>
+                <p>We'll set you in a curled position. After cold sterilization and draping, a local anesthetic prick is given. Stay still; if a contraction starts, inform us to pause.</p>
+                <div class="procedure-visual">
+                    <div class="position-demo"><i class="fas fa-chair"></i><h4>Sitting</h4></div>
+                    <div class="position-demo"><i class="fas fa-bed"></i><h4>Side-Lying</h4></div>
                 </div>
-                
-                <div class="subsection">
-                    <h3 class="subsection-title"><i class="fas fa-hand-holding-medical"></i> Steps</h3>
-                    <ul class="icon-list">
-                        <li><i class="fas fa-spray-can"></i> <strong>Cleaning:</strong> Cold antiseptic spray on your back.</li>
-                        <li><i class="fas fa-syringe"></i> <strong>Local Anesthetic:</strong> Small prick to numb the skin (minimal pain).</li>
-                        <li><i class="fas fa-user-md"></i> <strong>Placement:</strong> Thin catheter inserted for medication delivery.</li>
-                    </ul>
-                    <div class="warning">
-                        <strong>Important:</strong> Please stay perfectly still. If you feel a contraction coming, tell your doctor immediately so they can pause.
-                    </div>
-                </div>
-
-                <div class="myth-buster">
-                    <h3 class="subsection-title"><i class="fas fa-comment-medical"></i> Myth Buster</h3>
-                    <p><strong>Myth:</strong> Epidurals cause permanent back damage.<br>
-                    <strong>Fact:</strong> Extremely rare. You may have temporary soreness at the site for a few days.</p>
-                </div>
+                <div class="warning">You might feel a light "electrical" or prickly feeling in your back—this is normal. Just stay still.</div>
             </section>
 
             <section class="section">
-                <h2 class="section-title"><i class="fas fa-list-check"></i> Post-Procedure</h2>
-                
-                <div class="info-box">
-                   Follow these instructions to ensure safety and effectiveness.
-                </div>
-
-                <div class="subsection">
-                    <ul class="icon-list">
-                        <li><i class="fas fa-walking"></i> <strong>No Walking:</strong> Stay in bed while the catheter is in place.</li>
-                        <li><i class="fas fa-exchange-alt"></i> <strong>Positioning:</strong> Change sides every 20 minutes (ask nurse for help).</li>
-                        <li><i class="fas fa-weight-hanging"></i> <strong>Pressure:</strong> Feeling pressure (not pain) in the lower belly means it's time to push.</li>
-                        <li><i class="fas fa-running"></i> <strong>Legs:</strong> Flex your knees occasionally to maintain circulation.</li>
-                    </ul>
-                </div>
+                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Post-Insertion</h2>
+                <ul class="icon-list">
+                    <li><i class="fas fa-walking"></i> No walking allowed while the catheter is in place.</li>
+                    <li><i class="fas fa-bed"></i> Stay in the middle of the bed. Turn sides only every 20 mins with nurse guidance.</li>
+                    <li><i class="fas fa-info-circle"></i> Pressure in the late stage is normal and necessary for pushing.</li>
+                    <li><i class="fas fa-running"></i> Flex your knees every 20 mins. Inform the nurse if legs become too heavy.</li>
+                </ul>
             </section>
         </main>
-
         <footer>
             <div class="container">
-                <p><i class="fas fa-hands-helping"></i> <strong>You're in Safe Hands</strong></p>
-                <p>Our experienced team is dedicated to your safety and comfort.</p>
-                <p class="footer-note">This information is for educational purposes. Always follow your healthcare team's instructions.</p>
+                <p><strong>You're in Safe Hands</strong></p>
+                <p>The anaesthetist on call is always available to answer your questions.</p>
             </div>
         </footer>
     </div>
 
     <div class="floating-language-toggle">
-        <button id="lang-btn-ar" class="floating-lang-btn" style="display:none">
-            <i class="fas fa-language"></i> العربية
-        </button>
-        <button id="lang-btn-en" class="floating-lang-btn">
-            <i class="fas fa-language"></i> English
-        </button>
+        <button id="lang-btn-ar" class="floating-lang-btn">العربية</button>
+        <button id="lang-btn-en" class="floating-lang-btn">English</button>
     </div>
 
     <script src="script.js"></script>
