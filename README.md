@@ -24,3 +24,28 @@ epidural/
 ├── ar.html             (Arabic content only)
 ├── en.html             (English content only)
 └── README.md           (Project documentation)
+
+
+## How It Works
+
+1. **index.html** is the main file that loads:
+   - CSS styles from `style.css`
+   - JavaScript functionality from `script.js`
+   - Initial Arabic content from `ar.html` (loaded via JavaScript fetch)
+
+2. **Language Switching**:
+   - Uses a floating circular button at bottom-right (Arabic) or bottom-left (English)
+   - Saves user preference in localStorage
+   - Dynamically loads content without page refresh
+
+3. **Interactive Features**:
+   - Contraindications cards with swiping navigation
+   - Yes/No questionnaire for each contraindication
+   - Progress indicators and navigation controls
+
+## Setup Instructions
+
+1. **Local Development**:
+   ```bash
+   # Just open index.html in your browser
+   # All files should be in the same directory
