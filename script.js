@@ -1,178 +1,99 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const appState = {
-        lang: localStorage.getItem('epidural_lang') || 'ar',
-        isLoading: false
-    };
-
-    const dom = {
-        container: document.getElementById('content-container'),
-        arBtn: document.getElementById('floating-arabic-btn'),
-        enBtn: document.getElementById('floating-english-btn'),
-        loader: document.getElementById('loading-indicator')
-    };
-
-    // --- Core Functions ---
-
-    async function loadContent(lang) {
-        appState.isLoading = true;
-        updateUI(lang);
-        dom.loader.classList.add('active');
-        
-        try {
-            const response = await fetch(`${lang}.html`);
-            if (!response.ok) throw new Error('Network error');
-            const html = await response.text();
-            
-            dom.container.innerHTML = html;
-            
-            // Wait for DOM update then initialize
-            requestAnimationFrame(() => {
-                initInteractiveFeatures();
-                dom.loader.classList.remove('active');
-                appState.isLoading = false;
-            });
-
-        } catch (error) {
-            console.error(error);
-            dom.container.innerHTML = `<div class="error-container active">Error loading content / خطأ في التحميل</div>`;
-        }
-    }
-
-    function updateUI(lang) {
-        document.documentElement.lang = lang;
-        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        
-        // Toggle Buttons
-        if (lang === 'ar') {
-            dom.arBtn.style.display = 'none';
-            dom.enBtn.style.display = 'flex';
-            document.title = "إبرة الظهر لتسكين آلام الولادة";
+    
+    // 1. BANNER SHRINKING
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
         } else {
-            dom.arBtn.style.display = 'flex';
-            dom.enBtn.style.display = 'none';
-            document.title = "Epidural Analgesia for Labour Pain";
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // 2. LANGUAGE SWITCHING
+    const setLanguage = (lang) => {
+        const arContent = document.getElementById('content-ar');
+        const enContent = document.getElementById('content-en');
+        const arBtn = document.getElementById('lang-btn-ar');
+        const enBtn = document.getElementById('lang-btn-en');
+        const hTitle = document.getElementById('header-title');
+        const hTag = document.getElementById('header-tagline');
+
+        if(lang === 'ar') {
+            document.body.dir = 'rtl';
+            arContent.style.display = 'block';
+            enContent.style.display = 'none';
+            arBtn.style.display = 'none';
+            enBtn.style.display = 'block';
+            hTitle.innerText = "إبرة الظهر (الابيدورال)";
+            hTag.innerText = "دليل شامل، آمن، ومطمئن لتخفيف آلام الولادة";
+        } else {
+            document.body.dir = 'ltr';
+            arContent.style.display = 'none';
+            enContent.style.display = 'block';
+            arBtn.style.display = 'block';
+            enBtn.style.display = 'none';
+            hTitle.innerText = "Epidural Analgesia";
+            hTag.innerText = "Safe, effective, and reassuring pain relief";
         }
         
-        localStorage.setItem('epidural_lang', lang);
-        appState.lang = lang;
-    }
+        // RE-INITIALIZE INTERACTIVE PARTS FOR NEW LANGUAGE
+        initInteractions();
+    };
 
-    function switchLanguage(newLang) {
-        if (appState.isLoading || appState.lang === newLang) return;
-        loadContent(newLang);
-    }
+    document.getElementById('lang-btn-ar').onclick = () => setLanguage('ar');
+    document.getElementById('lang-btn-en').onclick = () => setLanguage('en');
 
-    // --- Interactive Features (Re-run on every load) ---
-
-    function initInteractiveFeatures() {
-        initTabs();
-        initCardNavigation();
-        initCheckboxes();
-    }
-
-    function initTabs() {
-        const tabs = document.querySelectorAll('.contra-tab');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                // Remove active class from all tabs
-                tabs.forEach(t => t.classList.remove('active'));
-                // Add to clicked
-                e.target.classList.add('active');
-
-                // Hide all sections
-                document.querySelectorAll('.contra-cards').forEach(c => c.classList.remove('active'));
+    // 3. TABS, CARDS & YES/NO LOGIC
+    function initInteractions() {
+        // Tab switching
+        document.querySelectorAll('.contra-tab').forEach(tab => {
+            tab.onclick = function() {
+                const parent = this.closest('.contraindications-container');
+                parent.querySelectorAll('.contra-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
                 
-                // Show target section
-                const targetId = e.target.dataset.tab;
-                const targetSection = document.getElementById(targetId);
-                if(targetSection) {
-                    targetSection.classList.add('active');
-                    resetCardView(targetSection);
-                }
-            });
+                const targetId = this.getAttribute('data-target');
+                parent.querySelectorAll('.contra-cards').forEach(c => c.classList.remove('active'));
+                document.getElementById(targetId).classList.add('active');
+            };
         });
-    }
 
-    function initCardNavigation() {
-        document.querySelectorAll('.contra-cards').forEach(container => {
-            const cards = container.querySelectorAll('.contra-card');
-            const prevBtn = container.querySelector('.prev-btn');
-            const nextBtn = container.querySelector('.next-btn');
-            const counter = container.querySelector('.current-card');
-            const total = container.querySelector('.total-cards');
-
-            if (!cards.length) return;
-
-            let currentIndex = 0;
-            if(total) total.textContent = cards.length;
-
-            // Helper to update view
-            const updateView = () => {
-                cards.forEach((card, index) => {
-                    card.style.display = index === currentIndex ? 'block' : 'none';
+        // Yes/No Selection
+        document.querySelectorAll('.check-option').forEach(opt => {
+            opt.onclick = function() {
+                const parent = this.parentElement;
+                parent.querySelectorAll('.check-option').forEach(o => {
+                    o.classList.remove('selected-yes', 'selected-no');
                 });
-                
-                if(counter) counter.textContent = currentIndex + 1;
-                
+                const val = this.getAttribute('data-value');
+                this.classList.add(val === 'yes' ? 'selected-yes' : 'selected-no');
+            };
+        });
+
+        // Navigation (Next/Prev)
+        document.querySelectorAll('.contra-cards').forEach(cardGroup => {
+            const cards = cardGroup.querySelectorAll('.contra-card');
+            const nextBtn = cardGroup.querySelector('.next-btn');
+            const prevBtn = cardGroup.querySelector('.prev-btn');
+            const counter = cardGroup.querySelector('.current-card');
+            let currentIndex = 0;
+
+            if(!nextBtn) return; // Skip if relative tab (no nav)
+
+            const update = () => {
+                cards.forEach((c, i) => c.style.display = i === currentIndex ? 'block' : 'none');
+                if(counter) counter.innerText = currentIndex + 1;
                 if(prevBtn) prevBtn.disabled = currentIndex === 0;
                 if(nextBtn) nextBtn.disabled = currentIndex === cards.length - 1;
             };
 
-            // Event Listeners
-            if(prevBtn) {
-                prevBtn.onclick = () => {
-                    if(currentIndex > 0) {
-                        currentIndex--;
-                        updateView();
-                    }
-                };
-            }
-
-            if(nextBtn) {
-                nextBtn.onclick = () => {
-                    if(currentIndex < cards.length - 1) {
-                        currentIndex++;
-                        updateView();
-                    }
-                };
-            }
-
-            // Initial run
-            updateView();
+            nextBtn.onclick = () => { if(currentIndex < cards.length - 1) { currentIndex++; update(); }};
+            prevBtn.onclick = () => { if(currentIndex > 0) { currentIndex--; update(); }};
+            update();
         });
     }
 
-    function resetCardView(container) {
-        const cards = container.querySelectorAll('.contra-card');
-        const prevBtn = container.querySelector('.prev-btn');
-        const nextBtn = container.querySelector('.next-btn');
-        const counter = container.querySelector('.current-card');
-
-        cards.forEach((card, i) => card.style.display = i === 0 ? 'block' : 'none');
-        if(counter) counter.textContent = '1';
-        if(prevBtn) prevBtn.disabled = true;
-        if(nextBtn) nextBtn.disabled = cards.length <= 1;
-    }
-
-    function initCheckboxes() {
-        document.querySelectorAll('.check-option').forEach(opt => {
-            opt.addEventListener('click', function() {
-                const parent = this.closest('.check-options');
-                parent.querySelectorAll('.check-option').forEach(o => {
-                    o.classList.remove('selected-yes', 'selected-no');
-                });
-                
-                const val = this.dataset.value;
-                this.classList.add(val === 'yes' ? 'selected-yes' : 'selected-no');
-            });
-        });
-    }
-
-    // --- Initialization ---
-    
-    dom.arBtn.addEventListener('click', () => switchLanguage('ar'));
-    dom.enBtn.addEventListener('click', () => switchLanguage('en'));
-
-    // Start App
-    loadContent(appState.lang);
+    // Default start
+    setLanguage('ar');
 });
