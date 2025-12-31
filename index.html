@@ -3,46 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إبرة الظهر (إبرة التخدير فوق الجافية) لتسكين آلام الولادة | Epidural Analgesia for Labour Pain</title>
+    <title>إبرة الظهر لتسكين آلام الولادة | Epidural Analgesia for Labour Pain</title>
+    <meta name="description" content="دليل شامل عن إبرة الظهر أثناء الولادة - معلومات طبية موثوقة">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body dir="rtl">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">انتقل إلى المحتوى الرئيسي</a>
+
     <!-- Floating Language Toggle -->
-    <div class="floating-language-toggle">
-        <button id="floating-arabic-btn" class="floating-lang-btn active">
-            <i class="fas fa-language"></i>
+    <div class="floating-language-toggle" aria-label="تغيير اللغة">
+        <button id="floating-arabic-btn" class="floating-lang-btn active" aria-label="العربية" lang="ar">
+            <i class="fas fa-language" aria-hidden="true"></i>
             <span class="lang-text">العربية</span>
         </button>
-        <button id="floating-english-btn" class="floating-lang-btn" style="display: none;">
-            <i class="fas fa-language"></i>
+        <button id="floating-english-btn" class="floating-lang-btn" aria-label="English" lang="en" style="display: none;">
+            <i class="fas fa-language" aria-hidden="true"></i>
             <span class="lang-text">English</span>
         </button>
     </div>
 
-    <!-- Main Content Container -->
-    <div id="content-container">
-        <!-- Content will be loaded here -->
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="loading-indicator" role="status" aria-live="polite">
+        <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+        <span class="loading-text">جاري التحميل...</span>
     </div>
 
+    <!-- Main Content Container -->
+    <main id="content-container" aria-live="polite"></main>
+
+    <!-- Error Message Container -->
+    <div id="error-container" class="error-container" role="alert" aria-live="assertive"></div>
+
     <script src="script.js"></script>
-    <script>
-        // Load Arabic content by default
-        document.addEventListener('DOMContentLoaded', function() {
-            // Apply theme colors immediately
-            const root = document.documentElement;
-            root.style.setProperty('--primary', '#4a6fa5');
-            root.style.setProperty('--secondary', '#c6d8e8');
-            root.style.setProperty('--accent', '#ff9a8d');
-            root.style.setProperty('--light', '#f8f9fa');
-            root.style.setProperty('--dark', '#2c3e50');
-            root.style.setProperty('--success', '#66bb6a');
-            root.style.setProperty('--warning', '#ffa726');
-            root.style.setProperty('--danger', '#ef5350');
-            
-            loadContent('ar');
-        });
-    </script>
 </body>
 </html>
