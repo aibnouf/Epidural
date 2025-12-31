@@ -16,7 +16,7 @@ A multilingual, responsive webpage providing comprehensive information about epi
 - **No External Dependencies**: Only uses Font Awesome and Google Fonts CDN
 
 ## File Structure
-epidural-info/
+epidural/
 │
 ├── index.html          (Main file - loads Arabic content by default)
 ├── style.css           (All CSS styles)
