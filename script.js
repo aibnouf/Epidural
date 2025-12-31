@@ -8,8 +8,25 @@ const body = document.body;
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Apply theme colors immediately
+    applyThemeColors();
+    
+    // Set up language switching
     setupLanguageSwitching();
 });
+
+// Apply theme colors to elements
+function applyThemeColors() {
+    // This ensures colors are applied even if there's a delay
+    document.documentElement.style.setProperty('--primary', '#4a6fa5');
+    document.documentElement.style.setProperty('--secondary', '#c6d8e8');
+    document.documentElement.style.setProperty('--accent', '#ff9a8d');
+    document.documentElement.style.setProperty('--light', '#f8f9fa');
+    document.documentElement.style.setProperty('--dark', '#2c3e50');
+    document.documentElement.style.setProperty('--success', '#66bb6a');
+    document.documentElement.style.setProperty('--warning', '#ffa726');
+    document.documentElement.style.setProperty('--danger', '#ef5350');
+}
 
 // Language switching functionality
 function setupLanguageSwitching() {
@@ -48,12 +65,14 @@ function updateLanguageUI(language) {
         floatingArabicBtn.style.display = 'none';
         floatingEnglishBtn.style.display = 'flex';
         body.setAttribute('dir', 'rtl');
+        body.setAttribute('lang', 'ar');
         document.documentElement.setAttribute('lang', 'ar');
         document.title = "إبرة الظهر (إبرة التخدير فوق الجافية) لتسكين آلام الولادة | Epidural Analgesia for Labour Pain";
     } else {
         floatingEnglishBtn.style.display = 'none';
         floatingArabicBtn.style.display = 'flex';
         body.setAttribute('dir', 'ltr');
+        body.setAttribute('lang', 'en');
         document.documentElement.setAttribute('lang', 'en');
         document.title = "Epidural Analgesia for Labour Pain | إبرة الظهر (إبرة التخدير فوق الجافية) لتسكين آلام الولادة";
     }
@@ -72,6 +91,9 @@ function loadContent(language) {
         .then(html => {
             container.innerHTML = html;
             
+            // Re-apply theme colors
+            applyThemeColors();
+            
             // Initialize all interactive elements
             setTimeout(() => {
                 initializeContraTabs();
@@ -83,8 +105,8 @@ function loadContent(language) {
         .catch(error => {
             console.error('Error loading content:', error);
             container.innerHTML = `<div class="container" style="text-align: center; padding: 2rem;">
-                <h2>Error loading content</h2>
-                <p>Please check your internet connection and try again.</p>
+                <h2 style="color: var(--danger)">Error loading content</h2>
+                <p style="color: var(--dark)">Please check your internet connection and try again.</p>
             </div>`;
         });
 }
@@ -99,6 +121,10 @@ function loadLanguagePreference() {
     const savedLanguage = localStorage.getItem('epidural-language-preference');
     if (savedLanguage === 'english') {
         switchToEnglish();
+    } else {
+        // Arabic is default
+        floatingArabicBtn.style.display = 'none';
+        floatingEnglishBtn.style.display = 'flex';
     }
 }
 
