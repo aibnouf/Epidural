@@ -1,7 +1,7 @@
 <header>
     <div class="container">
         <div class="header-content">
-            <h1><i class="fas fa-baby"></i> Epidural Analgesia for Labour Pain</h1>
+            <h1><i class="fas fa-baby" aria-hidden="true"></i> Epidural Analgesia for Labour Pain</h1>
             <p class="tagline">A comprehensive guide to understanding epidural during childbirth – safe, effective, and reassuring</p>
         </div>
     </div>
@@ -9,48 +9,48 @@
 
 <main class="container">
     <!-- Introduction Section -->
-    <section class="section" id="introduction-en">
-        <h2 class="section-title"><i class="fas fa-heartbeat"></i> Introduction to Epidural Analgesia</h2>
+    <section class="section" id="introduction">
+        <h2 class="section-title"><i class="fas fa-heartbeat" aria-hidden="true"></i> Introduction to Epidural Analgesia</h2>
         
         <div class="subsection">
-            <h3 class="subsection-title"><i class="fas fa-clock"></i> How Epidural Works</h3>
+            <h3 class="subsection-title"><i class="fas fa-clock" aria-hidden="true"></i> How Epidural Works</h3>
             <p>An epidural is a safe and effective method for managing labour pain. Once administered, it typically takes <strong>10 to 20 minutes</strong> to take effect. The pain relief happens gradually, allowing you to remain comfortable and aware during your childbirth experience.</p>
             
             <div class="highlight">
                 <p><strong>Epidural can help by:</strong></p>
                 <ul class="icon-list">
-                    <li><i class="fas fa-arrow-down"></i> <strong>Decreasing the intensity</strong> of contraction pain</li>
-                    <li><i class="fas fa-hourglass-half"></i> <strong>Reducing the duration</strong> of pain during contractions</li>
-                    <li><i class="fas fa-expand-arrows-alt"></i> <strong>Prolonging the time between contractions</strong>, giving you more rest</li>
-                    <li><i class="fas fa-check-circle"></i> Often a combination of all these benefits</li>
+                    <li><i class="fas fa-arrow-down" aria-hidden="true"></i> <strong>Decreasing the intensity</strong> of contraction pain</li>
+                    <li><i class="fas fa-hourglass-half" aria-hidden="true"></i> <strong>Reducing the duration</strong> of pain during contractions</li>
+                    <li><i class="fas fa-expand-arrows-alt" aria-hidden="true"></i> <strong>Prolonging the time between contractions</strong>, giving you more rest</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Often a combination of all these benefits</li>
                 </ul>
             </div>
         </div>
         
         <div class="subsection">
-            <h3 class="subsection-title"><i class="fas fa-bullseye"></i> What to Expect</h3>
+            <h3 class="subsection-title"><i class="fas fa-bullseye" aria-hidden="true"></i> What to Expect</h3>
             <p>The primary role of an epidural is to <strong>reduce labour pain to a manageable level or eliminate it entirely</strong>. Labour pain typically starts in the lower back and radiates to the lower abdomen. With an epidural, this discomfort is significantly decreased, allowing you to focus on the birth of your baby.</p>
             <p>You'll remain awake and alert, able to participate in the delivery while being comfortable. The goal is to make your childbirth experience as positive as possible.</p>
         </div>
     </section>
 
     <!-- Contraindications Section -->
-    <section class="section" id="contraindications-en">
-        <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> Contraindications for Epidural</h2>
+    <section class="section" id="contraindications">
+        <h2 class="section-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Contraindications for Epidural</h2>
         
         <div class="contraindications-container">
             <div class="contra-tabs">
-                <button class="contra-tab active" data-tab="absolute-en">Absolute Contraindications</button>
-                <button class="contra-tab" data-tab="relative-en">Relative Contraindications</button>
+                <button class="contra-tab active" data-tab="absolute-cards-en">Absolute Contraindications</button>
+                <button class="contra-tab" data-tab="relative-cards-en">Relative Contraindications</button>
             </div>
             
-            <!-- Absolute Contraindications Cards -->
             <div class="contra-cards-container">
+                <!-- Absolute Contraindications Cards -->
                 <div id="absolute-cards-en" class="contra-cards active">
-                    <div class="contra-card fade-in">
+                    <div class="contra-card">
                         <div class="contra-card-header">
                             <div class="contra-card-icon">
-                                <i class="fas fa-times-circle"></i>
+                                <i class="fas fa-times-circle" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Patient Refusal</h3>
                         </div>
@@ -59,17 +59,17 @@
                         </div>
                         <div class="check-question">
                             <p>Have you refused the epidural?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select refusal status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contra-card fade-in" style="display: none;">
+                    <div class="contra-card">
                         <div class="contra-card-header">
                             <div class="contra-card-icon">
-                                <i class="fas fa-syringe"></i>
+                                <i class="fas fa-syringe" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Recent Blood Thinners Administration</h3>
                         </div>
@@ -78,17 +78,17 @@
                         </div>
                         <div class="check-question">
                             <p>Have you recently received blood thinners?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select blood thinners status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contra-card fade-in" style="display: none;">
+                    <div class="contra-card">
                         <div class="contra-card-header">
                             <div class="contra-card-icon">
-                                <i class="fas fa-tint"></i>
+                                <i class="fas fa-tint" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Severe Coagulopathy</h3>
                         </div>
@@ -97,17 +97,17 @@
                         </div>
                         <div class="check-question">
                             <p>Do you have blood clotting disorders?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select coagulopathy status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contra-card fade-in" style="display: none;">
+                    <div class="contra-card">
                         <div class="contra-card-header">
                             <div class="contra-card-icon">
-                                <i class="fas fa-chart-line"></i>
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Low Platelet Count</h3>
                         </div>
@@ -116,17 +116,17 @@
                         </div>
                         <div class="check-question">
                             <p>Do you have low platelet count?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select platelet count status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contra-card fade-in" style="display: none;">
+                    <div class="contra-card">
                         <div class="contra-card-header">
                             <div class="contra-card-icon">
-                                <i class="fas fa-bacteria"></i>
+                                <i class="fas fa-bacteria" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Infection at Insertion Site</h3>
                         </div>
@@ -135,40 +135,40 @@
                         </div>
                         <div class="check-question">
                             <p>Do you have an infection in your back area?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select infection status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="contra-navigation">
-                        <button class="nav-btn prev-btn" disabled>
-                            <i class="fas fa-arrow-left"></i> Previous
+                        <button class="nav-btn prev-btn" disabled aria-label="Previous">
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i> Previous
                         </button>
                         <div class="contra-counter">
                             <span class="current-card">1</span> / <span class="total-cards">5</span>
                         </div>
-                        <button class="nav-btn next-btn">
-                            Next <i class="fas fa-arrow-right"></i>
+                        <button class="nav-btn next-btn" aria-label="Next">
+                            Next <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </button>
                     </div>
                     
                     <div class="card-dots">
-                        <div class="card-dot active" data-index="0"></div>
-                        <div class="card-dot" data-index="1"></div>
-                        <div class="card-dot" data-index="2"></div>
-                        <div class="card-dot" data-index="3"></div>
-                        <div class="card-dot" data-index="4"></div>
+                        <div class="card-dot active" data-index="0" aria-label="Card 1 of 5"></div>
+                        <div class="card-dot" data-index="1" aria-label="Card 2 of 5"></div>
+                        <div class="card-dot" data-index="2" aria-label="Card 3 of 5"></div>
+                        <div class="card-dot" data-index="3" aria-label="Card 4 of 5"></div>
+                        <div class="card-dot" data-index="4" aria-label="Card 5 of 5"></div>
                     </div>
                 </div>
                 
                 <!-- Relative Contraindications Cards -->
                 <div id="relative-cards-en" class="contra-cards">
-                    <div class="contra-card fade-in">
+                    <div class="contra-card">
                         <div class="contra-card-header">
-                            <div class="contra-card-icon" style="background-color: #fff3e0; color: #ef6c00;">
-                                <i class="fas fa-exclamation-circle"></i>
+                            <div class="contra-card-icon">
+                                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Systemic Infection</h3>
                         </div>
@@ -177,17 +177,17 @@
                         </div>
                         <div class="check-question">
                             <p>Do you have a systemic infection or fever?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select infection status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contra-card fade-in" style="display: none;">
+                    <div class="contra-card">
                         <div class="contra-card-header">
-                            <div class="contra-card-icon" style="background-color: #fff3e0; color: #ef6c00;">
-                                <i class="fas fa-exclamation-circle"></i>
+                            <div class="contra-card-icon">
+                                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Mild Coagulopathy</h3>
                         </div>
@@ -196,17 +196,17 @@
                         </div>
                         <div class="check-question">
                             <p>Do you have mild blood clotting disorders?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select coagulopathy status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contra-card fade-in" style="display: none;">
+                    <div class="contra-card">
                         <div class="contra-card-header">
-                            <div class="contra-card-icon" style="background-color: #fff3e0; color: #ef6c00;">
-                                <i class="fas fa-exclamation-circle"></i>
+                            <div class="contra-card-icon">
+                                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Previous Spinal Surgery</h3>
                         </div>
@@ -215,17 +215,17 @@
                         </div>
                         <div class="check-question">
                             <p>Have you had spinal surgery?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select spinal surgery status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contra-card fade-in" style="display: none;">
+                    <div class="contra-card">
                         <div class="contra-card-header">
-                            <div class="contra-card-icon" style="background-color: #fff3e0; color: #ef6c00;">
-                                <i class="fas fa-exclamation-circle"></i>
+                            <div class="contra-card-icon">
+                                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
                             </div>
                             <h3 class="contra-card-title">Pre-existing Neurological Conditions</h3>
                         </div>
@@ -234,58 +234,58 @@
                         </div>
                         <div class="check-question">
                             <p>Do you have neurological conditions?</p>
-                            <div class="check-options">
-                                <div class="check-option" data-value="yes">Yes</div>
-                                <div class="check-option" data-value="no">No</div>
+                            <div class="check-options" role="group" aria-label="Select neurological conditions status">
+                                <div class="check-option" data-value="yes" tabindex="0" role="button">Yes</div>
+                                <div class="check-option" data-value="no" tabindex="0" role="button">No</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="contra-navigation">
-                        <button class="nav-btn prev-btn" disabled>
-                            <i class="fas fa-arrow-left"></i> Previous
+                        <button class="nav-btn prev-btn" disabled aria-label="Previous">
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i> Previous
                         </button>
                         <div class="contra-counter">
                             <span class="current-card">1</span> / <span class="total-cards">4</span>
                         </div>
-                        <button class="nav-btn next-btn">
-                            Next <i class="fas fa-arrow-right"></i>
+                        <button class="nav-btn next-btn" aria-label="Next">
+                            Next <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </button>
                     </div>
                     
                     <div class="card-dots">
-                        <div class="card-dot active" data-index="0"></div>
-                        <div class="card-dot" data-index="1"></div>
-                        <div class="card-dot" data-index="2"></div>
-                        <div class="card-dot" data-index="3"></div>
+                        <div class="card-dot active" data-index="0" aria-label="Card 1 of 4"></div>
+                        <div class="card-dot" data-index="1" aria-label="Card 2 of 4"></div>
+                        <div class="card-dot" data-index="2" aria-label="Card 3 of 4"></div>
+                        <div class="card-dot" data-index="3" aria-label="Card 4 of 4"></div>
                     </div>
                 </div>
             </div>
             
             <div class="warning" style="margin-top: 2rem;">
-                <h3 class="subsection-title"><i class="fas fa-stethoscope"></i> Important Note</h3>
+                <h3 class="subsection-title"><i class="fas fa-stethoscope" aria-hidden="true"></i> Important Note</h3>
                 <p>If you answered "Yes" to any of the previous questions, please inform your anaesthetist before the procedure. Your condition will be carefully assessed to ensure your safety.</p>
             </div>
         </div>
     </section>
 
     <!-- Procedure Section -->
-    <section class="section" id="procedure-en">
-        <h2 class="section-title"><i class="fas fa-procedures"></i> The Epidural Procedure</h2>
+    <section class="section" id="procedure">
+        <h2 class="section-title"><i class="fas fa-procedures" aria-hidden="true"></i> The Epidural Procedure</h2>
         
         <div class="subsection">
-            <h3 class="subsection-title"><i class="fas fa-couch"></i> Getting Comfortable</h3>
+            <h3 class="subsection-title"><i class="fas fa-couch" aria-hidden="true"></i> Getting Comfortable</h3>
             <p>We'll help you settle into a comfortable curled position. You can either:</p>
             
             <div class="procedure-visual">
                 <div class="position-demo">
-                    <i class="fas fa-chair"></i>
+                    <i class="fas fa-chair" aria-hidden="true"></i>
                     <h4>Sitting Position</h4>
                     <p>Sitting on the edge of the bed with relaxed shoulders, chin on chest</p>
                 </div>
                 
                 <div class="position-demo">
-                    <i class="fas fa-bed"></i>
+                    <i class="fas fa-bed" aria-hidden="true"></i>
                     <h4>Side-Lying Position</h4>
                     <p>Lying on your side with hips flexed toward abdomen, chin on chest</p>
                 </div>
@@ -295,23 +295,23 @@
         </div>
         
         <div class="subsection">
-            <h3 class="subsection-title"><i class="fas fa-hand-holding-medical"></i> During the Procedure</h3>
+            <h3 class="subsection-title"><i class="fas fa-hand-holding-medical" aria-hidden="true"></i> During the Procedure</h3>
             
             <ul class="icon-list">
-                <li><i class="fas fa-spray-can"></i> <strong>Cleaning:</strong> You'll feel a cold antiseptic on your back to ensure sterility</li>
-                <li><i class="fas fa-shield-alt"></i> <strong>Draping:</strong> A sterile drape will be placed over your back</li>
-                <li><i class="fas fa-syringe"></i> <strong>Local anesthetic:</strong> A small prick to numb the area (you might feel pressure but minimal pain)</li>
-                <li><i class="fas fa-cat"></i> <strong>Catheter placement:</strong> A thin tube is inserted (you might feel a light electrical or prickly sensation)</li>
+                <li><i class="fas fa-spray-can" aria-hidden="true"></i> <strong>Cleaning:</strong> You'll feel a cold antiseptic on your back to ensure sterility</li>
+                <li><i class="fas fa-shield-alt" aria-hidden="true"></i> <strong>Draping:</strong> A sterile drape will be placed over your back</li>
+                <li><i class="fas fa-syringe" aria-hidden="true"></i> <strong>Local anesthetic:</strong> A small prick to numb the area (you might feel pressure but minimal pain)</li>
+                <li><i class="fas fa-user-md" aria-hidden="true"></i> <strong>Catheter placement:</strong> A thin tube is inserted (you might feel a light electrical or prickly sensation)</li>
             </ul>
             
             <div class="highlight">
-                <h4 class="subsection-title"><i class="fas fa-volume-up"></i> Important Instructions During Procedure</h4>
+                <h4 class="subsection-title"><i class="fas fa-volume-up" aria-hidden="true"></i> Important Instructions During Procedure</h4>
                 <p><strong>Please stay still and don't move.</strong> If you feel anything or have a contraction, inform your anaesthetist immediately. They will pause the procedure until you're comfortable. There are no surprises – your anaesthetist will explain each step as they go.</p>
             </div>
         </div>
         
         <div class="myth-buster">
-            <h3 class="subsection-title"><i class="fas fa-comment-medical"></i> Common Myths & Reassurance</h3>
+            <h3 class="subsection-title"><i class="fas fa-comment-medical" aria-hidden="true"></i> Common Myths & Reassurance</h3>
             <p><strong>Myth:</strong> Epidurals are dangerous and can cause permanent back problems.</p>
             <p><strong>Fact:</strong> Epidurals are very safe when administered by trained professionals. Temporary soreness at the injection site is possible, but permanent nerve damage is extremely rare.</p>
             <p><strong>Myth:</strong> You won't be able to push effectively with an epidural.</p>
@@ -321,41 +321,41 @@
     </section>
 
     <!-- Post-Insertion Instructions -->
-    <section class="section" id="post-insertion-en">
-        <h2 class="section-title"><i class="fas fa-list-check"></i> After Your Epidural: Important Instructions</h2>
+    <section class="section" id="post-insertion">
+        <h2 class="section-title"><i class="fas fa-list-check" aria-hidden="true"></i> After Your Epidural: Important Instructions</h2>
         
         <div class="info-box">
             <p>Following these instructions will help ensure your epidural works effectively and safely throughout your labour and delivery.</p>
         </div>
         
         <div class="subsection">
-            <h3 class="subsection-title"><i class="fas fa-bed"></i> Activity & Positioning</h3>
+            <h3 class="subsection-title"><i class="fas fa-bed" aria-hidden="true"></i> Activity & Positioning</h3>
             <ol class="icon-list">
-                <li><i class="fas fa-walking"></i> <strong>No walking:</strong> You will stay in bed as long as the epidural catheter is in place for safety.</li>
-                <li><i class="fas fa-compress-arrows-alt"></i> <strong>Optimal position:</strong> Remain in the middle of the bed, not lying on either side. If side-lying is needed, nurses will instruct you and you should not stay on one side longer than 20 minutes.</li>
-                <li><i class="fas fa-exchange-alt"></i> <strong>Position changes:</strong> Turn from side to side every 20 minutes as instructed by your nurse, then return to a semi-sitting position.</li>
+                <li><i class="fas fa-walking" aria-hidden="true"></i> <strong>No walking:</strong> You will stay in bed as long as the epidural catheter is in place for safety.</li>
+                <li><i class="fas fa-compress-arrows-alt" aria-hidden="true"></i> <strong>Optimal position:</strong> Remain in the middle of the bed, not lying on either side. If side-lying is needed, nurses will instruct you and you should not stay on one side longer than 20 minutes.</li>
+                <li><i class="fas fa-exchange-alt" aria-hidden="true"></i> <strong>Position changes:</strong> Turn from side to side every 20 minutes as instructed by your nurse, then return to a semi-sitting position.</li>
             </ol>
         </div>
         
         <div class="subsection">
-            <h3 class="subsection-title"><i class="fas fa-baby"></i> During Delivery</h3>
+            <h3 class="subsection-title"><i class="fas fa-baby" aria-hidden="true"></i> During Delivery</h3>
             <ol class="icon-list" start="4">
-                <li><i class="fas fa-weight-hanging"></i> <strong>Pressure sensation:</strong> In late stage labour, you'll feel pressure (not pain) in your lower abdomen. This is the baby moving through your pelvis. <strong>When you feel this pressure, it's time to push.</strong> No epidural can eliminate this important sensation.</li>
-                <li><i class="fas fa-plus-circle"></i> <strong>Additional benefit:</strong> The epidural also numbs the perineal area. This effect improves with time and is best in a semi-sitting position.</li>
-                <li><i class="fas fa-running"></i> <strong>Leg movements:</strong> Every 20 minutes, flex your knees to maintain movement. Your legs may feel numb and heavy, but maintaining movement helps with pushing. If you cannot move your legs, inform your nurse to adjust the epidural rate.</li>
+                <li><i class="fas fa-weight-hanging" aria-hidden="true"></i> <strong>Pressure sensation:</strong> In late stage labour, you'll feel pressure (not pain) in your lower abdomen. This is the baby moving through your pelvis. <strong>When you feel this pressure, it's time to push.</strong> No epidural can eliminate this important sensation.</li>
+                <li><i class="fas fa-plus-circle" aria-hidden="true"></i> <strong>Additional benefit:</strong> The epidural also numbs the perineal area. This effect improves with time and is best in a semi-sitting position.</li>
+                <li><i class="fas fa-running" aria-hidden="true"></i> <strong>Leg movements:</strong> Every 20 minutes, flex your knees to maintain movement. Your legs may feel numb and heavy, but maintaining movement helps with pushing. If you cannot move your legs, inform your nurse to adjust the epidural rate.</li>
             </ol>
         </div>
         
         <div class="subsection">
-            <h3 class="subsection-title"><i class="fas fa-chart-line"></i> What the Evidence Shows</h3>
+            <h3 class="subsection-title"><i class="fas fa-chart-line" aria-hidden="true"></i> What the Evidence Shows</h3>
             <ol class="icon-list" start="7">
-                <li><i class="fas fa-clock"></i> <strong>Delivery duration:</strong> Most studies show epidurals do not significantly prolong labour. A few suggest a possible extension of about 15 minutes only.</li>
-                <li><i class="fas fa-baby-carriage"></i> <strong>Delivery method:</strong> Epidurals are not associated with increased rates of assisted delivery (forceps/vacuum) or cesarean section.</li>
+                <li><i class="fas fa-clock" aria-hidden="true"></i> <strong>Delivery duration:</strong> Most studies show epidurals do not significantly prolong labour. A few suggest a possible extension of about 15 minutes only.</li>
+                <li><i class="fas fa-baby-carriage" aria-hidden="true"></i> <strong>Delivery method:</strong> Epidurals are not associated with increased rates of assisted delivery (forceps/vacuum) or cesarean section.</li>
             </ol>
         </div>
         
         <div class="highlight">
-            <h4 class="subsection-title"><i class="fas fa-question-circle"></i> Questions & Concerns</h4>
+            <h4 class="subsection-title"><i class="fas fa-question-circle" aria-hidden="true"></i> Questions & Concerns</h4>
             <p>If you have any questions or concerns at any time, please inform your nurse. The anaesthetist on call is available to answer your questions and ensure you have the best possible experience.</p>
         </div>
     </section>
@@ -364,7 +364,7 @@
 <footer>
     <div class="container">
         <div class="footer-content">
-            <p><i class="fas fa-hands-helping"></i> <strong>You're in Safe Hands</strong></p>
+            <p><i class="fas fa-hands-helping" aria-hidden="true"></i> <strong>You're in Safe Hands</strong></p>
             <p>Our experienced anaesthesia team is dedicated to ensuring your comfort and safety throughout your labour and delivery.</p>
             <p class="footer-note">This information is intended for educational purposes. Always follow the specific instructions provided by your healthcare team.</p>
         </div>
