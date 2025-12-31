@@ -1,99 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. BANNER SHRINKING
-    window.addEventListener('scroll', () => {
+    window.onscroll = () => {
         const header = document.getElementById('main-header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+        if (window.scrollY > 50) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+    };
 
-    // 2. LANGUAGE SWITCHING
-    const setLanguage = (lang) => {
-        const arContent = document.getElementById('content-ar');
-        const enContent = document.getElementById('content-en');
-        const arBtn = document.getElementById('lang-btn-ar');
-        const enBtn = document.getElementById('lang-btn-en');
-        const hTitle = document.getElementById('header-title');
-        const hTag = document.getElementById('header-tagline');
-
-        if(lang === 'ar') {
-            document.body.dir = 'rtl';
-            arContent.style.display = 'block';
-            enContent.style.display = 'none';
-            arBtn.style.display = 'none';
-            enBtn.style.display = 'block';
-            hTitle.innerText = "إبرة الظهر (الابيدورال)";
-            hTag.innerText = "دليل شامل، آمن، ومطمئن لتخفيف آلام الولادة";
-        } else {
-            document.body.dir = 'ltr';
-            arContent.style.display = 'none';
-            enContent.style.display = 'block';
-            arBtn.style.display = 'block';
-            enBtn.style.display = 'none';
-            hTitle.innerText = "Epidural Analgesia";
-            hTag.innerText = "Safe, effective, and reassuring pain relief";
-        }
-        
-        // RE-INITIALIZE INTERACTIVE PARTS FOR NEW LANGUAGE
+    const setLang = (lang) => {
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.getElementById('content-ar').style.display = lang === 'ar' ? 'block' : 'none';
+        document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+        document.getElementById('lang-btn-ar').style.display = lang === 'ar' ? 'none' : 'block';
+        document.getElementById('lang-btn-en').style.display = lang === 'en' ? 'none' : 'block';
         initInteractions();
     };
 
-    document.getElementById('lang-btn-ar').onclick = () => setLanguage('ar');
-    document.getElementById('lang-btn-en').onclick = () => setLanguage('en');
+    document.getElementById('lang-btn-ar').onclick = () => setLang('ar');
+    document.getElementById('lang-btn-en').onclick = () => setLang('en');
 
-    // 3. TABS, CARDS & YES/NO LOGIC
     function initInteractions() {
-        // Tab switching
-        document.querySelectorAll('.contra-tab').forEach(tab => {
-            tab.onclick = function() {
+        document.querySelectorAll('.contra-tab').forEach(btn => {
+            btn.onclick = function() {
                 const parent = this.closest('.contraindications-container');
                 parent.querySelectorAll('.contra-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
-                
-                const targetId = this.getAttribute('data-target');
                 parent.querySelectorAll('.contra-cards').forEach(c => c.classList.remove('active'));
-                document.getElementById(targetId).classList.add('active');
-            };
+                document.getElementById(this.dataset.target).classList.add('active');
+            }
         });
 
-        // Yes/No Selection
-        document.querySelectorAll('.check-option').forEach(opt => {
-            opt.onclick = function() {
-                const parent = this.parentElement;
-                parent.querySelectorAll('.check-option').forEach(o => {
-                    o.classList.remove('selected-yes', 'selected-no');
-                });
-                const val = this.getAttribute('data-value');
-                this.classList.add(val === 'yes' ? 'selected-yes' : 'selected-no');
-            };
-        });
-
-        // Navigation (Next/Prev)
-        document.querySelectorAll('.contra-cards').forEach(cardGroup => {
-            const cards = cardGroup.querySelectorAll('.contra-card');
-            const nextBtn = cardGroup.querySelector('.next-btn');
-            const prevBtn = cardGroup.querySelector('.prev-btn');
-            const counter = cardGroup.querySelector('.current-card');
-            let currentIndex = 0;
-
-            if(!nextBtn) return; // Skip if relative tab (no nav)
-
+        document.querySelectorAll('.contra-cards').forEach(group => {
+            const cards = group.querySelectorAll('.contra-card');
+            const next = group.querySelector('.next-btn');
+            const prev = group.querySelector('.prev-btn');
+            const count = group.querySelector('.current-card');
+            let idx = 0;
             const update = () => {
-                cards.forEach((c, i) => c.style.display = i === currentIndex ? 'block' : 'none');
-                if(counter) counter.innerText = currentIndex + 1;
-                if(prevBtn) prevBtn.disabled = currentIndex === 0;
-                if(nextBtn) nextBtn.disabled = currentIndex === cards.length - 1;
+                cards.forEach((c, i) => c.style.display = i === idx ? 'block' : 'none');
+                if(count) count.textContent = idx + 1;
+                if(next) next.disabled = idx === cards.length - 1;
+                if(prev) prev.disabled = idx === 0;
             };
-
-            nextBtn.onclick = () => { if(currentIndex < cards.length - 1) { currentIndex++; update(); }};
-            prevBtn.onclick = () => { if(currentIndex > 0) { currentIndex--; update(); }};
+            if(next) next.onclick = () => { idx++; update(); };
+            if(prev) prev.onclick = () => { idx--; update(); };
             update();
         });
     }
-
-    // Default start
-    setLanguage('ar');
+    setLang('ar');
 });
