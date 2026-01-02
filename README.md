@@ -6,7 +6,7 @@ A multilingual, responsive webpage providing comprehensive information about epi
 
 ## Features
 
-- **Bilingual Support**: Full Arabic (RTL) and English (LTR) support with toggle button
+- **Bilingual Support**: Full Arabic (RTL) and English (LTR) support with elegant circular floating toggle button
 - **Responsive Design**: Works perfectly on all device sizes
 - **Interactive Elements**: 
   - Card-based contraindications questionnaire with swiping functionality
@@ -14,16 +14,15 @@ A multilingual, responsive webpage providing comprehensive information about epi
   - Yes/No selection options for contraindications
 - **Professional Design**: Clean, medical-grade interface with warm, reassuring tone
 - **No External Dependencies**: Only uses Font Awesome and Google Fonts CDN
+- **Improved UX**: Floating language toggle button with icons, fixed header offset to prevent content hiding
 
 ## File Structure
 epidural/
 │
 ├── index.html          (Main file - loads Arabic content by default)
-├── style.css           (All CSS styles)
-├── script.js           (All JavaScript functionality)
-├── ar.html             (Arabic content only)
-├── en.html             (English content only)
-└── README.md           (Project documentation)
+├── style.css           (All CSS styles - updated with floating language button)
+├── script.js           (All JavaScript functionality - updated for single toggle)
+└── README.md           (Project documentation - updated with latest changes)
 
 
 
@@ -32,10 +31,11 @@ epidural/
 1. **index.html** is the main file that loads:
    - CSS styles from `style.css`
    - JavaScript functionality from `script.js`
-   - Initial Arabic content from `ar.html` (loaded via JavaScript fetch)
+   - Initial Arabic content (loaded by default with English toggle option)
 
 2. **Language Switching**:
-   - Uses a floating circular button at bottom-right (Arabic) or bottom-left (English)
+   - Uses a floating circular button at top-right (LTR) or top-left (RTL)
+   - Button displays "EN" icon when showing Arabic, "AR" icon when showing English
    - Saves user preference in localStorage
    - Dynamically loads content without page refresh
 
@@ -50,13 +50,3 @@ epidural/
    ```bash
    # Just open index.html in your browser
    # All files should be in the same directory
-
-
-## Key Improvements:
-1. Critical Bug Fix: Fixed the contraindications card navigation that was broken when switching tabs
-2. Accessibility: Added ARIA labels, keyboard navigation, focus indicators, and screen reader support
-3. Performance: Better error handling, loading states, and optimized DOM operations
-4. Design: Modern color scheme, improved spacing, hover effects, and animations
-5. Mobile: Better responsive design with proper RTL/LTR handling
-6. Code Quality: Removed inline styles, consolidated CSS, cleaner JavaScript structure
-7. UX: Visual feedback for user actions, persistent selections, smoother transitions
