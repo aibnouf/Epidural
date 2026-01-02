@@ -1,27 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // EmailJS Configuration - YOUR ACTUAL CREDENTIALS
+    // EmailJS Configuration
     const EMAILJS_CONFIG = {
-        SERVICE_ID: 'service_ghdaxm8',        // Your service ID
-        TEMPLATE_ID: 'template_1hr79vx',      // Your template ID
-        PUBLIC_KEY: 'sT3YiCaF-9Ji-HoOm'       // Your public key
+        SERVICE_ID: 'service_ghdaxm8',
+        TEMPLATE_ID: 'template_1hr79vx',
+        PUBLIC_KEY: 'sT3YiCaF-9Ji-HoOm'
     };
 
     // Initialize EmailJS
     emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
 
-    // Function to sanitize strings for EmailJS
-    function sanitizeForEmailJS(str) {
-        if (!str) return str;
-        // Replace characters that break HTML/EmailJS parsing
-        return String(str)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;')
-            .replace(/\(/g, '&#40;')  // Escape opening parenthesis
-            .replace(/\)/g, '&#41;')  // Escape closing parenthesis
-            .replace(/\n/g, '<br>');  // Convert newlines to HTML breaks
+    // Simple sanitization - only convert newlines to <br> for message
+    function sanitizeMessage(str) {
+        if (!str) return '';
+        return String(str).replace(/\n/g, '<br>');
     }
 
     // Current language variable
@@ -91,9 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Language switching function
     const setLang = (lang) => {
-        currentLang = lang; // Store current language
-        
-        // Set direction and display appropriate content
+        currentLang = lang;
         document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
         
         // Show/hide language content
@@ -123,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initInteractions();
     };
 
-    // Language button event listeners - UPDATED FOR HEADER BUTTONS
+    // Language button event listeners
     document.getElementById('header-lang-btn-ar').onclick = () => setLang('ar');
     document.getElementById('header-lang-btn-en').onclick = () => setLang('en');
 
@@ -255,14 +244,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Open modal
         openBtn.onclick = () => {
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent body scrolling
+            document.body.style.overflow = 'hidden';
         };
         
         // Close modal
         closeBtn.onclick = () => {
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore body scrolling
-            // Clear form and status
+            document.body.style.overflow = 'auto';
             form.reset();
             statusDiv.style.display = 'none';
         };
@@ -271,8 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.onclick = (event) => {
             if (event.target === modal) {
                 modal.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Restore body scrolling
-                // Clear form and status
+                document.body.style.overflow = 'auto';
                 form.reset();
                 statusDiv.style.display = 'none';
             }
@@ -285,38 +272,45 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = form.querySelector('.submit-btn');
             const originalBtnText = submitBtn.innerHTML;
             
+            // Get form values
+            const userName = form.user_name.value.trim();
+            const userEmail = form.user_email.value.trim();
+            const messageType = form.message_type.value;
+            const message = form.message.value.trim();
+            
+            // Validation
+            if (!userEmail || !messageType || !message) {
+                statusDiv.className = 'error-message';
+                statusDiv.textContent = FEEDBACK_TEXTS[currentLang].required;
+                statusDiv.style.display = 'block';
+                return;
+            }
+            
             // Show sending state
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${FEEDBACK_TEXTS[currentLang].sending}`;
-            
-            // Hide previous status
             statusDiv.style.display = 'none';
             
             try {
-                // Prepare form data WITH SANITIZATION
-                const formData = {
+                // Prepare template parameters - NO over-sanitization
+                const templateParams = {
                     to_name: "Dr. Ibnouf",
                     to_email: "epidural@ibnouf.me",
-                    from_name: sanitizeForEmailJS(form.user_name.value) || 'Anonymous',
-                    from_email: sanitizeForEmailJS(form.user_email.value),
-                    message_type: sanitizeForEmailJS(form.message_type.value),
-                    message: sanitizeForEmailJS(form.message.value),
+                    from_name: userName || 'Anonymous',
+                    from_email: userEmail,
+                    message_type: messageType,
+                    message: sanitizeMessage(message),
                     page_language: currentLang,
                     timestamp: new Date().toLocaleString(),
                     page_url: window.location.href
                 };
                 
-                console.log('Sending email with sanitized data:', formData);
-                console.log('Using config:', EMAILJS_CONFIG);
-                
                 // Send email using EmailJS
                 const response = await emailjs.send(
                     EMAILJS_CONFIG.SERVICE_ID,
                     EMAILJS_CONFIG.TEMPLATE_ID,
-                    formData
+                    templateParams
                 );
-                
-                console.log('EmailJS response:', response);
                 
                 // Show success message
                 statusDiv.className = 'success-message';
