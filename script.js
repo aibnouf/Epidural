@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('content-ar').style.display = lang === 'ar' ? 'block' : 'none';
         document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
         
-        // Toggle language buttons
-        document.getElementById('lang-btn-ar').style.display = lang === 'ar' ? 'none' : 'block';
-        document.getElementById('lang-btn-en').style.display = lang === 'en' ? 'none' : 'block';
+        // Update header buttons
+        document.getElementById('header-lang-btn-ar').classList.toggle('active', lang === 'ar');
+        document.getElementById('header-lang-btn-en').classList.toggle('active', lang === 'en');
         
         // Update header text
         document.getElementById('header-title').innerText = lang === 'ar' 
@@ -108,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         initInteractions();
     };
 
-    // Language button event listeners
-    document.getElementById('lang-btn-ar').onclick = () => setLang('ar');
-    document.getElementById('lang-btn-en').onclick = () => setLang('en');
+    // Language button event listeners - UPDATED FOR HEADER BUTTONS
+    document.getElementById('header-lang-btn-ar').onclick = () => setLang('ar');
+    document.getElementById('header-lang-btn-en').onclick = () => setLang('en');
 
     // Initialize interactions
     function initInteractions() {
@@ -240,13 +240,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Open modal
         openBtn.onclick = () => {
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Prevent body scrolling
         };
         
         // Close modal
         closeBtn.onclick = () => {
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // Restore body scrolling
             // Clear form and status
             form.reset();
             statusDiv.style.display = 'none';
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.onclick = (event) => {
             if (event.target === modal) {
                 modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                document.body.style.overflow = 'auto'; // Restore body scrolling
                 // Clear form and status
                 form.reset();
                 statusDiv.style.display = 'none';
