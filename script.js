@@ -9,6 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize EmailJS
     emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
 
+    // Function to sanitize strings for EmailJS
+    function sanitizeForEmailJS(str) {
+        if (!str) return str;
+        // Replace characters that break HTML/EmailJS parsing
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;')
+            .replace(/\(/g, '&#40;')  // Escape opening parenthesis
+            .replace(/\)/g, '&#41;')  // Escape closing parenthesis
+            .replace(/\n/g, '<br>');  // Convert newlines to HTML breaks
+    }
+
     // Current language variable
     let currentLang = 'ar';
 
@@ -278,20 +293,20 @@ document.addEventListener('DOMContentLoaded', () => {
             statusDiv.style.display = 'none';
             
             try {
-                // Prepare form data
+                // Prepare form data WITH SANITIZATION
                 const formData = {
                     to_name: "Dr. Ibnouf",
                     to_email: "epidural@ibnouf.me",
-                    from_name: form.user_name.value || 'Anonymous',
-                    from_email: form.user_email.value,
-                    message_type: form.message_type.value,
-                    message: form.message.value,
+                    from_name: sanitizeForEmailJS(form.user_name.value) || 'Anonymous',
+                    from_email: sanitizeForEmailJS(form.user_email.value),
+                    message_type: sanitizeForEmailJS(form.message_type.value),
+                    message: sanitizeForEmailJS(form.message.value),
                     page_language: currentLang,
                     timestamp: new Date().toLocaleString(),
                     page_url: window.location.href
                 };
                 
-                console.log('Sending email with data:', formData);
+                console.log('Sending email with sanitized data:', formData);
                 console.log('Using config:', EMAILJS_CONFIG);
                 
                 // Send email using EmailJS
