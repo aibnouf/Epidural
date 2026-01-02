@@ -22,7 +22,7 @@
 
 body {
     margin: 0;
-    padding-top: 140px;
+    padding-top: 160px; /* Increased from 140px to prevent content hiding */
     background: var(--bg);
     color: var(--text);
     font-family: 'Montserrat', sans-serif;
@@ -88,34 +88,45 @@ header.scrolled .tagline {
     display: none;
 }
 
-/* Language Switcher in Header */
-.header-language-toggle {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.header-lang-btn {
-    background: var(--primary);
+/* Floating Language Toggle Button - NEW DESIGN */
+.floating-lang-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px; /* LTR position */
+    z-index: 9999;
+    background: linear-gradient(135deg, var(--primary) 0%, #1d5668 100%);
     color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(42, 107, 127, 0.3);
     transition: var(--transition);
-    font-size: 0.9rem;
-    white-space: nowrap;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
-.header-lang-btn:hover {
-    background: #1d5668;
-    transform: translateY(-2px);
+body[dir="rtl"] .floating-lang-btn {
+    right: auto;
+    left: 25px; /* RTL position */
 }
 
-.header-lang-btn.active {
-    background: var(--secondary);
-    box-shadow: 0 2px 8px rgba(216, 163, 86, 0.3);
+.floating-lang-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(42, 107, 127, 0.4);
+}
+
+.floating-lang-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* Ensure first section has extra top margin for safety */
+.lang-content .section:first-child {
+    margin-top: 1rem;
 }
 
 /* Container */
@@ -620,7 +631,7 @@ body[dir="rtl"] .error-message {
 /* Feedback Button - Now without language toggle conflict */
 .floating-feedback-btn {
     position: fixed;
-    bottom: 25px; /* Now positioned at bottom since no language toggle */
+    bottom: 25px;
     right: 25px;
     z-index: 9999;
     background: linear-gradient(135deg, var(--primary) 0%, #1d5668 100%);
@@ -660,7 +671,7 @@ body[dir="rtl"] .floating-feedback-btn {
 /* Responsive */
 @media (max-width: 768px) {
     body {
-        padding-top: 120px;
+        padding-top: 130px; /* Adjusted for mobile */
     }
     
     .section {
@@ -671,10 +682,6 @@ body[dir="rtl"] .floating-feedback-btn {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-    }
-    
-    .header-language-toggle {
-        align-self: flex-start;
     }
     
     .complication-grid,
@@ -711,6 +718,20 @@ body[dir="rtl"] .floating-feedback-btn {
         max-height: 80vh; /* Adjust for mobile */
     }
     
+    /* Adjust floating buttons for mobile */
+    .floating-lang-btn {
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    body[dir="rtl"] .floating-lang-btn {
+        right: auto;
+        left: 20px;
+    }
+    
     .floating-feedback-btn {
         bottom: 20px;
         right: 20px;
@@ -730,13 +751,27 @@ body[dir="rtl"] .floating-feedback-btn {
     
     .section {
         padding: 1.2rem;
+        margin-bottom: 1.5rem;
     }
     
     .section-title {
         font-size: 1.3rem;
     }
     
-    /* Mobile-specific button fix */
+    /* Mobile-specific button fixes */
+    .floating-lang-btn {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    body[dir="rtl"] .floating-lang-btn {
+        right: auto;
+        left: 15px;
+    }
+    
     .floating-feedback-btn {
         padding: 15px;
         border-radius: 50%;
@@ -755,14 +790,11 @@ body[dir="rtl"] .floating-feedback-btn {
         font-size: 1.5rem;
     }
     
-    .header-language-toggle {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+    .header-content h1 {
+        font-size: 1.3rem;
     }
     
-    .header-lang-btn {
-        padding: 6px 12px;
-        font-size: 0.85rem;
+    .tagline {
+        font-size: 0.9rem;
     }
 }
