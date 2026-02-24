@@ -1,381 +1,610 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
+<!-- FavIcons Start -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <!-- FavIcons End -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إبرة الظهر لتسكين آلام الولادة - Epidural Analgesia</title>
-    <meta name="description" content="دليل شامل عن إبرة الظهر لتسكين آلام الولادة - معلومات شاملة عن المزايا، الموانع، المضاعفات، والإجراء">
+    <title>Dr. AbdulRhman Ibnouf - Senior Specialist, Anaesthesiology</title>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Dr. AbdulRhman Ibnouf is a Senior Specialist in Anaesthesiology at Dr. Suliman AlHabib Medical Group, Riyadh, KSA. Dedicated to patient safety, pain management, and public education about anaesthesia.">
+    <meta name="keywords" content="Dr. AbdulRhman Ibnouf, Anaesthesiology, Anaesthesiologist, Anaesthesia, Anesthesi, Riyadh, Saudi Arabia, Pain Management, Epidural, Patient Safety, Dr. Suliman AlHabib">
+    <meta name="author" content="Dr. AbdulRhman Ibnouf">
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Dr. AbdulRhman Ibnouf - Senior Specialist, Anaesthesiology">
+    <meta property="og:description" content="Senior Specialist in Anaesthesiology at Dr. Suliman AlHabib Medical Group, Riyadh, KSA. Dedicated to patient safety and medical education.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ibnouf.me">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a5f7a;
+            --light-blue: #2a87b3;
+            --accent-teal: #57cc99;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-teal);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-left: 10px;
+        }
+        .logo-text span { color: var(--accent-teal); }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li { margin-left: 2rem; }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover { color: var(--light-blue); }
+        .mobile-menu-btn { 
+            display: none; 
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--medium-gray) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--light-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .hero .institution {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contact Bar */
+        .contact-bar {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .contact-bar .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 15px;
+        }
+        .contact-item i {
+            margin-right: 10px;
+            color: var(--accent-teal);
+        }
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-item a:hover {
+            color: var(--accent-teal);
+            text-decoration: underline;
+        }
+
+        /* Cards & Content */
+        .content-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-teal);
+        }
+        .highlight-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .highlight-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            border-bottom: 1px dashed var(--medium-gray);
+        }
+        .highlight-list li:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f058";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+        }
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .value-item {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border-left: 4px solid var(--primary-blue);
+        }
+        .value-item i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 20px 0 30px;
+        }
+        .footer-contact a {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            transition: all 0.3s;
+        }
+        .footer-contact a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        .footer-contact i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.4rem; }
+            .hero .subtitle { font-size: 1.3rem; }
+            .section-title h2 { font-size: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                background: white;
+                width: 250px;
+                height: 100vh;
+                box-shadow: var(--shadow);
+                padding: 100px 30px 30px;
+                transition: 0.5s ease;
+                z-index: 1000;
+            }
+            nav ul.active { 
+                right: 0; 
+            }
+            nav ul li { 
+                margin: 15px 0; 
+            }
+            nav ul li a {
+                font-size: 1.1rem;
+                padding: 10px;
+                display: block;
+                border-bottom: 1px solid var(--medium-gray);
+            }
+            .contact-bar .container { 
+                flex-direction: column; 
+            }
+            .contact-item { 
+                margin: 10px 0; 
+            }
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            .logo-img {
+                height: 40px;
+            }
+            .footer-contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .footer-contact a {
+                width: 80%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 576px) {
+            .hero { padding: 100px 0 60px; }
+            .hero h1 { font-size: 2rem; }
+            .content-card { padding: 25px; }
+            section { padding: 60px 0; }
+            .logo-text {
+                font-size: 1.2rem;
+                margin-left: 5px;
+            }
+            .logo-img {
+                height: 35px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <header id="main-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="header-main">
-                    <h1><i class="fas fa-baby"></i> <span id="header-title">إبرة الظهر (الابيدورال)</span></h1>
-                    <p class="tagline" id="header-tagline">دليل شامل، آمن، ومطمئن لتخفيف آلام الولادة</p>
-                </div>
-            </div>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo-container">
+                <img src="assets/logo.png" alt="Dr. Ibnouf Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">My Role</a></li>
+                    <li><a href="#misconceptions">Insights</a></li>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#contact-info">Contact</a></li>
+                    <li><a href="https://epidural.ibnouf.me" target="_blank" style="color: var(--accent-teal);"><i class="fas fa-flask"></i> Active Projects</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Floating Language Toggle Button -->
-    <button class="floating-lang-btn" id="lang-toggle-btn" title="Switch to English">
-        <i class="fas fa-language"></i>
-    </button>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Dr. AbdulRhman Ibnouf</h1>
+            <p class="subtitle">Senior Specialist — Anaesthesiology</p>
+            <p class="institution">Dr. Suliman AlHabib Medical Group – Al Sweidi Hospital - Riyadh - KSA</p>
+            <a href="#contact-info" class="btn"><i class="fas fa-envelope"></i> Contact Information</a>
+        </div>
+    </section>
 
-    <div id="content-ar" class="lang-content">
-        <main class="container">
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-heartbeat"></i> مقدمة</h2>
-                <p>إبرة الظهر هي وسيلة فعالة لتخفيف آلام الولادة (التي تبدأ من أسفل الظهر إلى أسفل البطن) لدرجة تجعل الألم محتملاً جداً أو يختفي تماماً.</p>
-                <div class="intro-box">
-                    <ul class="icon-list">
-                        <li><i class="fas fa-clock"></i> تحتاج من 10 إلى 20 دقيقة ليبدأ مفعولها.</li>
-                        <li><i class="fas fa-compress-arrows-alt"></i> تقلل من شدة الألم أو مدة الشعور بالانقباضة.</li>
-                        <li><i class="fas fa-hourglass-half"></i> تطيل المدة بين الانقباضات أو جميع هذه التأثيرات معاً.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> موانع الاستعمال</h2>
-                <div class="contraindications-container">
-                    <div class="contra-tabs">
-                        <button class="contra-tab active" data-target="abs-ar">موانع مطلقة</button>
-                        <button class="contra-tab" data-target="rel-ar">موانع نسبية</button>
-                    </div>
-                    <div id="abs-ar" class="contra-cards active">
-                        <div class="contra-card">
-                            <h3>رفض المريضة</h3>
-                            <p>لا يمكن إجراء التخدير بدون موافقتك الصريحة.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>مميعات الدم (LMWH)</h3>
-                            <p>جرعة وقائية خلال 12 ساعة أو علاجية خلال 24 ساعة.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>مشاكل التخثر الشديدة</h3>
-                            <p>نقص الصفائح (أقل من 50) أو اعتلال شديد في التختر.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>عدوى موضعية</h3>
-                            <p>إنتان في موقع الحقن.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>عدم استقرار الدورة الدموية</h3>
-                            <p>نقص حجم الدم أو عدم استقرار القلب والأوعية الدموية.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>أسباب طبية أخرى</h3>
-                            <p>ارتفاع ضغط الدماغ.</p>
-                        </div>
-                        <div class="contra-navigation">
-                            <button class="nav-btn prev-btn">السابق</button>
-                            <span><span class="current-card">1</span> / <span class="total-cards">6</span></span>
-                            <button class="nav-btn next-btn">التالي</button>
-                        </div>
-                    </div>
-                    <div id="rel-ar" class="contra-cards">
-                        <div class="contra-card">
-                            <h3>استشارة الطبيب</h3>
-                            <p>العدوى الجهازية، اعتلال التختر الطفيف، أو عمليات سابقة في العمود الفقري، أو حالات عصبية موجودة مسبقاً.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-notes-medical"></i> المضاعفات المحتملة</h2>
-                <div class="complication-grid">
-                    <div class="comp-item">
-                        <div class="comp-header"><span>فشل الإجراء</span> <span class="percent">2-4%</span></div>
-                        <p>عدم انخفاض الألم بعد 20 دقيقة مع غياب علامات التخدر (تنميل أو ثقل). <strong>الحل: إعادة تركيب الإبرة مرة أخرى.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>صداع ما بعد الوخز</span> <span class="percent">2-4%</span></div>
-                        <p>يظهر بعد 1-2 يوم. <strong>الحل: إبلاغ فريق التخدر؛ معظم الحالات تشفى تلقائياً باتباع تعليمات الفريق.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>هبوط الضغط</span> <span class="percent">5-10%</span></div>
-                        <p>قد تشعرين بدوار أو غثيان. <strong>الحل: إبلاغ الممرضة فوراً لإعطائك دواءً وريدياً يرفع الضغط ويتم متابعتك حتى الاستقرار.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>آلام الظهر</span> <span class="percent">5-10%</span></div>
-                        <p>تزول خلال 7-10 أيام. <strong>الحل: استخدام كريم مسكن. الإبرة لا تسبب آلاماً مزمنة بل تخففها.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>الرعشة</span> <span class="percent">10%</span></div>
-                        <p>ناتجة عن الأدوية المنشطة للرحم أو إفراز الأوكسيتوسين الطبيعي.</p>
-                    </div>
-                </div>
-                <div class="rare-comp">
-                    <h4>مضاعفات نادرة جداً:</h4>
-                    <p>تلف الأعصاب الدائم (1 في 240,000)، العدوى الشوكية أو النزيف (1 في 170,000).</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-user-md"></i> خطوات الإجراء</h2>
-                <p>سنساعدك على اتخاذ وضعية الانحناء (جلوساً أو جانبياً). سيتم تعقيم الظهر ووضع غطاء معقم.</p>
-                <div class="procedure-visual">
-                    <div class="position-demo"><i class="fas fa-chair"></i><h4>وضعية الجلوس</h4></div>
-                    <div class="position-demo"><i class="fas fa-bed"></i><h4>الاستلقاء الجانبي</h4></div>
-                </div>
-                <div class="warning-box">
-                    <p><strong>يرجى البقاء ثابتة تماماً</strong>. إذا شعرت بأي انقباضة، أبلغينا للتوقف مؤقتاً. قد تشعرين بوخزة كهربائية خفيفة؛ أخبرينا بمكانها ولكن لا تتحركي. سيتم تخدر منطقة صغيرة في أسفل الظهر. إذا شعرت بأي ألم، أبلغي طبيب التخدر فوراً.</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> تعليمات ما بعد الإدخال</h2>
-                <div class="instructions-list">
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-walking"></i> عدم المشي</h4>
-                        <p>يمنع المشي تماماً طالما القسطرة موجودة.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-bed"></i> الوضعية المثالية</h4>
-                        <p>الوضعية المثالية هي منتصف السرير. التغيير للجانبين يكون كل 20 دقيقة.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-compress"></i> الضغط في البطن</h4>
-                        <p>ضغط أسفل البطن في المرحلة الأخيرة ضروري ولا تزيله الإبرة.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-running"></i> تحريك القدمين</h4>
-                        <p>تحريك القدمين وثني الركب كل 20 دقيقة لضمان قوة الدفع.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-hourglass"></i> مدة الولادة</h4>
-                        <p>الإبرة لا تطيل مدة الولادة بشكل ملحوظ (قد تطيلها 15 دقيقة فقط في بعض الدراسات).</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-baby"></i> نوع الولادة</h4>
-                        <p>الإبرة لا تغير نوع أو طريقة الولادة (طبيعية، مساعدة، أو قيصرية).</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-comments"></i> الأسئلة</h4>
-                        <p>إذا كان لديك أي أسئلة، أبلغ الممرضة وسيأتي طبيب التخدر للإجابة عليها.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-percentage"></i> فائدة إضافية</h4>
-                        <p>تخدر منطقة العجان يعتمد على طبيعة الجسم، مدة الإبرة، والوضعية شبه الجالسة.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <div class="container">
-                <p><strong>أنتِ في أيدٍ أمينة</strong></p>
-                <p>فريق التخدير متاح دائماً للإجابة على تساؤلاتك عبر الممرضة.</p>
+    <!-- Contact Information Bar -->
+    <div class="contact-bar" id="contact-info">
+        <div class="container">
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span><strong>Contact Hours:</strong> 15:00 – 18:00 (Riyadh Time)</span>
             </div>
-        </footer>
-    </div>
-
-    <div id="content-en" class="lang-content" style="display: none;">
-        <main class="container">
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-heartbeat"></i> Introduction</h2>
-                <p>An epidural is a safe method to manage labour pain. It decreases the intensity of pain until it is well tolerated or disappears completely.</p>
-                <div class="intro-box">
-                    <ul class="icon-list">
-                        <li><i class="fas fa-clock"></i> Takes 10-20 minutes to take effect.</li>
-                        <li><i class="fas fa-compress-arrows-alt"></i> Reduces intensity and duration of contractions.</li>
-                        <li><i class="fas fa-hourglass-half"></i> Prolongs interval between contractions or all of these effects together.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> Contraindications</h2>
-                <div class="contraindications-container">
-                    <div class="contra-tabs">
-                        <button class="contra-tab active" data-target="abs-en">Absolute</button>
-                        <button class="contra-tab" data-target="rel-en">Relative</button>
-                    </div>
-                    <div id="abs-en" class="contra-cards active">
-                        <div class="contra-card">
-                            <h3>Patient Refusal</h3>
-                            <p>Procedure cannot be done without your explicit consent.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>Blood Thinners (LMWH)</h3>
-                            <p>Prophylactic dose within 12 hours or therapeutic dose within 24 hours.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>Severe Coagulopathy</h3>
-                            <p>Platelet count < 50 or severe bleeding disorders.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>Localized Infection</h3>
-                            <p>Infection at the insertion site.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>Cardiovascular Instability</h3>
-                            <p>Hypovolaemia or cardiovascular instability.</p>
-                        </div>
-                        <div class="contra-card">
-                            <h3>Other Medical</h3>
-                            <p>Raised intracranial pressure.</p>
-                        </div>
-                        <div class="contra-navigation">
-                            <button class="nav-btn prev-btn">Previous</button>
-                            <span><span class="current-card">1</span> / <span class="total-cards">6</span></span>
-                            <button class="nav-btn next-btn">Next</button>
-                        </div>
-                    </div>
-                    <div id="rel-en" class="contra-cards">
-                        <div class="contra-card">
-                            <h3>Consultant Review</h3>
-                            <p>Includes systemic infection, mild coagulopathy, previous spinal surgery, or pre-existing neurological conditions.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-notes-medical"></i> Complications</h2>
-                <div class="complication-grid">
-                    <div class="comp-item">
-                        <div class="comp-header"><span>Failure of Procedure</span> <span class="percent">2-4%</span></div>
-                        <p>No pain relief after 20 mins and no leg numbness. <strong>Solution: Placement of the epidural again.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>Post-Dural Headache</span> <span class="percent">2-4%</span></div>
-                        <p>Appears 1-2 days later. <strong>Solution: Inform the anesthesia team; most resolve spontaneously with instructions.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>Hypotension</span> <span class="percent">5-10%</span></div>
-                        <p>Dizziness or nausea. <strong>Solution: Inform your nurse; we will provide IV medication to raise blood pressure immediately.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>Back Pain</span> <span class="percent">5-10%</span></div>
-                        <p>Resolves in 7-10 days. <strong>Solution: Apply analgesic cream. Epidurals do not cause chronic pain.</strong></p>
-                    </div>
-                    <div class="comp-item">
-                        <div class="comp-header"><span>Shivering</span> <span class="percent">10%</span></div>
-                        <p>Related to uterinotonics or natural oxytocin release during labour.</p>
-                    </div>
-                </div>
-                <div class="rare-comp">
-                    <h4>Rare Complications:</h4>
-                    <p>Permanent nerve damage (1 in 240,000), spinal infection or bleeding (1 in 170,000).</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-user-md"></i> Procedure</h2>
-                <p>We'll set you in a comfortable curled position (sitting or side-lying). Stay still; if a contraction starts, inform us to pause. You may feel a light prickly feeling; just stay still and inform the anaesthetist where you feel it.</p>
-                <div class="procedure-visual">
-                    <div class="position-demo"><i class="fas fa-chair"></i><h4>Sitting Position</h4></div>
-                    <div class="position-demo"><i class="fas fa-bed"></i><h4>Side-Lying Position</h4></div>
-                </div>
-                <div class="warning-box">
-                    <p><strong>Please stay completely still</strong>. The anesthesiologist will numb a small area on your back. If you feel any pain, inform the anaesthetist immediately. A thin catheter will be placed for medication flow. It's a routine procedure done safely for many patients.</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Post-Epidural Instructions</h2>
-                <div class="instructions-list">
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-walking"></i> No Walking</h4>
-                        <p>No walking while the epidural catheter is in place.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-bed"></i> Optimal Position</h4>
-                        <p>Best position is middle of bed. Side positions should not exceed 20 minutes each.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-compress"></i> Abdominal Pressure</h4>
-                        <p>Pressure feeling in late stage is normal and necessary for pushing.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-running"></i> Leg Movements</h4>
-                        <p>Move feet and bend knees every 20 minutes to maintain pushing strength.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-hourglass"></i> Labour Duration</h4>
-                        <p>Epidural does not significantly prolong labour (may add only 15 minutes).</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-baby"></i> Delivery Type</h4>
-                        <p>Epidural does not change delivery method (normal, assisted, or C-section).</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-comments"></i> Questions</h4>
-                        <p>Inform your nurse if you have questions; the anaesthetist will come to answer.</p>
-                    </div>
-                    <div class="instruction-item">
-                        <h4><i class="fas fa-percentage"></i> Additional Benefit</h4>
-                        <p>Perineal anesthesia depends on body nature, epidural duration, and semi-sitting position.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <div class="container">
-                <p><strong>You're in Safe Hands</strong></p>
-                <p>The anaesthetist is always available to answer your questions.</p>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span><strong>Email:</strong> <a href="mailto:info@ibnouf.me" target="_blank">mailto:info@ibnouf.me</a></span>
             </div>
-        </footer>
-    </div>
-
-    <!-- Feedback Form Modal -->
-    <div id="feedback-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3 id="feedback-title">إرسال سؤال أو شكر</h3>
-            <p id="feedback-subtitle">سأرد عليك في أقرب وقت ممكن عبر البريد الإلكتروني</p>
-            
-            <form id="feedback-form">
-                <div class="form-group">
-                    <label for="user-name" id="name-label">الاسم (اختياري)</label>
-                    <input type="text" id="user-name" name="user_name" placeholder="اسمك">
-                </div>
-                
-                <div class="form-group">
-                    <label for="user-email" id="email-label">البريد الإلكتروني (مطلوب للرد)</label>
-                    <input type="email" id="user-email" name="user_email" placeholder="example@email.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message-type" id="type-label">نوع الرسالة</label>
-                    <select id="message-type" name="message_type" required>
-                        <option value="" disabled selected>اختر نوع الرسالة</option>
-                        <option value="question">سؤال</option>
-                        <option value="thanks">شكر وتقدير</option>
-                        <option value="feedback">ملاحظة أو اقتراح</option>
-                        <option value="other">أخرى</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message" id="message-label">الرسالة</label>
-                    <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn" id="submit-btn">
-                    <i class="fas fa-paper-plane"></i> إرسال الرسالة
-                </button>
-            </form>
-            
-            <div id="form-status" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px;"></div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abdulrhman-ibnouf" target="_blank">linkedin.com/in/abdulrhman-ibnouf</a></span>
+            </div>
         </div>
     </div>
 
-    <!-- Feedback Floating Button -->
-    <div class="floating-feedback-btn" id="feedback-btn">
-        <i class="fas fa-comment-medical"></i>
-        <span id="feedback-btn-text">سؤال؟</span>
-    </div>
+    <!-- Current Position & About -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Profile</h2>
+            </div>
 
-    <!-- Add EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+            <div class="content-card">
+                <h3><i class="fas fa-briefcase-medical"></i> Current Position</h3>
+                <p><strong>Institution:</strong> Dr. Suliman AlHabib Medical Group – Al Sweidi Hospital, Riyadh, KSA</p>
+                <p><strong>Role:</strong> Anaesthesiology Senior Specialist</p>
+                <p><strong>Duration:</strong> January 2023 – Present</p>
+            </div>
+
+            <div class="content-card">
+                <h3><i class="fas fa-stethoscope"></i> My Role as an Anaesthesiologist</h3>
+                <p>My responsibility extends far beyond "putting patients to sleep." I ensure patient safety before, during, and after surgical procedures.</p>
+                <ul class="highlight-list">
+                    <li>Assessing patients preoperatively and optimizing their medical conditions</li>
+                    <li>Providing safe and tailored anaesthesia plans</li>
+                    <li>Monitoring vital functions throughout surgery</li>
+                    <li>Managing pain and recovery in the postoperative period</li>
+                    <li>Responding to emergencies and critical care situations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misconceptions & Insights -->
+    <section id="misconceptions" style="background-color: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Common Misconceptions About Anaesthesia</h2>
+            </div>
+            <div class="two-column">
+                <div class="content-card">
+                    <h4><i class="fas fa-comment-medical"></i> "Anaesthesia is just sleep."</h4>
+                    <p>It is a controlled, medically induced state affecting consciousness, pain, memory, and reflexes.</p>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fas fa-user-md"></i> "The surgeon handles everything."</h4>
+                    <p>Anaesthesiologists are the physicians responsible for keeping the patient stable throughout the procedure.</p>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fas fa-shield-alt"></i> "Anaesthesia is dangerous."</h4>
+                    <p>Modern anaesthesia is extremely safe when administered by trained specialists.</p>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fas fa-info-circle"></i> "You don't need to tell the Anaesthesiologist everything."</h4>
+                    <p>Full honesty about medications, smoking, or health conditions is essential for safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Values -->
+    <section id="vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Vision & Values</h2>
+            </div>
+
+            <div class="content-card">
+                <h3><i class="fas fa-bullseye"></i> My Vision</h3>
+                <p>My mission is to make anaesthesia safer by educating non‑medical personnel and the public. Awareness reduces fear, improves cooperation, and enhances patient outcomes.</p>
+                <p>I am planning to pursue a subspecialty in Pain Management to support patients in acute and chronic pain settings.</p>
+            </div>
+
+            <div class="content-card">
+                <h3><i class="fas fa-heartbeat"></i> Professional Values</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-user-shield"></i>
+                        <h4>Patient Safety</h4>
+                        <p>Above all else</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-book-medical"></i>
+                        <h4>Evidence-Based</h4>
+                        <p>Clinical practice</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-comments"></i>
+                        <h4>Clear Communication</h4>
+                        <p>With patients and families</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Continuous Learning</h4>
+                        <p>Professional development</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>Compassionate Care</h4>
+                        <p>Culturally aware approach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Dr. AbdulRhman Ibnouf</h3>
+            <p>Senior Specialist in Anaesthesiology | Dedicated to Patient Safety & Education</p>
+            
+            <div class="footer-contact">
+                <a <span><strong>Email:</strong> <a href="mailto:info@ibnouf.me" target="_blank">mailto:info@ibnouf.me</a></span></a>
+                <a href="https://www.linkedin.com/in/abdulrhman-ibnouf" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+                <a href="https://epidural.ibnouf.me" target="_blank" style="background-color: var(--accent-teal);">
+                    <i class="fas fa-flask"></i> Active Projects
+                </a>
+            </div>
+            
+            <div style="margin: 25px 0;">
+                <a href="#home" class="btn" style="background-color: var(--accent-teal); margin: 5px;">Back to Top</a>
+            </div>
+            <div class="copyright">
+                <p>© <span id="currentYear">2025</span> Dr. AbdulRhman Ibnouf. All professional information is accurate as of current practice.</p>
+                <p>This website is for professional and patient educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile Menu Toggle - Fixed version
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            
+            // Toggle between bars and times icon
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#navMenu a').forEach(item => {
+            item.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnMenuBtn = menuBtn.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnMenuBtn && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
